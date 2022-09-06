@@ -1,0 +1,20 @@
+<div class="restaurant-main-card">
+    <% @restaurants.each do |restaurant|%>
+      <%= link_to restaurant_path(restaurant) do %>
+      <div class="restaurant-card">
+        <div class="restaurant-card-image">
+        <!-- Add cloudinary image here -->
+        </div>
+        <div class="restaurant-card-info">
+          <div>
+            <h2><%= restaurant.name %></h2>
+            <h3><%= restaurant.cuisine %></h3>
+          </div>
+          <div>
+            <h2 class="restaurant-card-pricing"><%= restaurant.price %></h2>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+</div>

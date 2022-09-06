@@ -1,10 +1,13 @@
 .restaurant-card {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 30px 0;
+
 }
 
-.restaurant-card > img {
+.restaurant-card-image {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -16,8 +19,14 @@
   margin: 0;
 }
 
+.restaurant-card h3 {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .restaurant-card p {
-  font-size: 12px;
+  font-size: 10px;
   opacity: .7;
   margin: 0;
 }
@@ -29,6 +38,11 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.restaurant-main-card a{
+  text-decoration: none;
+  color: black;
 }
 
 // .restaurant-card-info .card-trip-user {
