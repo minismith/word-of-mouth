@@ -2,9 +2,25 @@
 
 <div class="footer">
   <ul class="d-flex justify-content-between">
-    <li class="active"><i class="fa-solid fa-house"></i></li>
-    <li><i class="fa-solid fa-plus"></i></li>
-    <li><i class="fa-solid fa-magnifying-glass"></i></li>
-    <li><i class="fa-solid fa-user"></i></li>
+    <li class="active">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    </li>
+    <li>
+      <%= link_to reviews_path do %>
+      <i class="fa-solid fa-plus"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to restaurants_path do %>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to user_path(current_user) do %>
+      <i class="fa-solid fa-user"></i>
+    <% end %>
+    </li>
   </ul>
 </div>
