@@ -1,15 +1,14 @@
 <div class="review-card">
-    <div class="review-card-info">
-      <div>
+  <div class="review-top-row">
+    <div class="avatar-title">
+        <i class="fa-regular fa-face-smile me-3 "></i>
         <h2><%= review.title %></h2>
-        <p><%= review.content %></p>
-        <p>Perfect for: <%= review.perfect_for %></p>
-      </div>
-      <div class="review-likes">
-        <p>Likes: <%= review.likes %></p>
-      </div>
-      <div class="review-emoji">
-        <p>Rating: <%= review.emoji %></p>
-      </div>
+    </div>
+   <div class="review-emoji">
+      <p><%= review.emoji %></p>
+    </div>
+  </div>
+    <div class="review-content">
+      <p><%= review.content[0, 120]%>...</p>
     </div>
 </div>
