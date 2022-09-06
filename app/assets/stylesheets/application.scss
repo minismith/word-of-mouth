@@ -13,6 +13,9 @@
 @import "pages/index";
 @import "components/footer";
 @import "components/header";
+@import "pages/review_index";
+@import "components/review_card";
+
 
 h1, h2, h3 {
   font-family: 'DM Sans', sans-serif;
@@ -22,4 +25,8 @@ h1, h2, h3 {
 p {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
+}
+
+body {
+  background-color: #FADCDC;
 }
