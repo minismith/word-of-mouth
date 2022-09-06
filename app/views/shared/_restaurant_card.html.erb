@@ -1,10 +1,9 @@
 <div class="restaurant-card">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <%= cl_image_tag space.photos.first.key %>
   <div class="restaurant-card-info">
     <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+      <h2><%= restaurant.name %></h2>
     </div>
-    <h2 class="restaurant-card-pricing">£99.99</h2>
+    <h2 class="restaurant-card-pricing">£££</h2>
   </div>
 </div>
