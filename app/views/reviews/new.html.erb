@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="review-title">
+    <h1>How was it?</h1>
+  </div>
+  <div id="review_form">
+  <%= simple_form_for [@review] do |f| %>
+
+    <h2><%= f.input :restaurant_id, input_html: {style: 'width: 100%'}, label: "Where", collection: @restaurants %></h2>
+    <h2><%= f.input :title, input_html: {style: 'width: 100%'}, label: "The topline" %></h2>
+    <h2><%= f.input :content, input_html: {style: 'width: 100%'}, label: "Give it to us..." %></h2>
+
+      <%= f.button :submit, class: 'btn-outline-dark-new-space' %>
+    </div>
+  <% end %>
+  </div>
+
+
+</div>
