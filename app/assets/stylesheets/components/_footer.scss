@@ -4,22 +4,28 @@
   width: 100%;
   background-color:#FBB7C0;
   border-top: 3px solid black;
+
+    i {
+      margin-top: 7px;
+      font-size: 22px;
+      color: black;
+    }
 }
 
 .footer ul{
   list-style:none;
   color:black;
   padding: 10px 25px 0 25px;
+
+    :first-child {
+      margin-left: 8px;
+    }
+
+    :last-child {
+      margin-right: 8px;
+    }
 }
 
 .footer li{
   display:inline;
 }
-
-.fa-solid {
-  color:black;
-}
-
-// i{
-//   margin:8px;
-// }
