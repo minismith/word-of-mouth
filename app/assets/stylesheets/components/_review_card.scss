@@ -1,12 +1,10 @@
 .review-card {
   overflow: hidden;
   background: white;
-  width: 300px;
-  margin: 0px;
-  padding: 0px;
+  width: 84vw;
+  height: 120px;
+  padding: 15px;
   border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
   border: solid black 2px;
 
     h2 {
@@ -16,16 +14,21 @@
     }
 
     p {
-      font-size: 12px;
+      font-size: 14px;
       opacity: .7;
       margin: 0;
     }
   }
 
-  .review-likes {
-    padding: 10px;
-  }
+.review-top-row {
+  display: flex;
+  justify-content: space-between;
+}
 
-.review-card-info {
-  padding: 16px;
+.avatar-title {
+  display: flex;
+}
+
+.review-content {
+  margin-top: 8px;
 }

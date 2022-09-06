@@ -1,4 +1,14 @@
 .feed-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  // justify-content: center;
+}
+
+.review-intro {
+  font-size: smaller;
+  margin-bottom: 3px;
+}
+
+.feed-review {
+  margin: 0 auto 10px auto;
 }
