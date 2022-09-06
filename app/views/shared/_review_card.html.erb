@@ -1,15 +1,14 @@
-<% @reviews.each do |review| %>
-  <div class="review-card">
-        <div class="review-card-image">
-          <%= cl_image_tag review.photos.first.key %>
-        </div>
-        <div class="review-card-info">
-          <div>
-            <h2><%= review.title %></h2>
-          </div>
-          <div>
-            <h2 class="review-card-pricing">£<%= review.price_per_day.to_i %></h2>
-          </div>
-        </div>
+<div class="review-card">
+    <div class="review-card-info">
+      <div>
+        <h2><%= review.title %></h2>
+        <p>Restaurant: <%= review.restaurant.name %></p>
+        <p><%= review.emoji %></p>
+        <p><%= review.content %></p>
+        <p><%= review.perfect_for %></p>
+      </div>
+      <div>
+        <p class="review-likes">Likes: <%= review.likes %></p>
+      </div>
     </div>
-<% end %>
+</div>

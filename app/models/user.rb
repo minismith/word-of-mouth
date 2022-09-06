@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  # validates :first_name, presence: true
-  # validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   def friends
     friends_i_sent_invitation = Friendship.where(user_id: id, confirmed: true).pluck(:friend_id)

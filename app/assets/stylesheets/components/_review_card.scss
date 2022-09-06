@@ -2,16 +2,12 @@
   overflow: hidden;
   background: white;
   width: 300px;
+  height: 200px;
   margin: 20px;
   padding: 0px;
   border-radius: 7px;
-
-   .review-card-image img {
-    object-fit: cover;
-    height: 200px;
-    width: 300px;
-    object-position: center
-    }
+  display: flex;
+  justify-content: space-between;
 
     h2 {
       font-size: 16px;
@@ -27,15 +23,15 @@
 
   }
 
-.review-card-info {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  height: 70px;
-}
+  .review-likes {
+    padding: 10px;
+  }
 
-// .review-card-pricing {
-
+// .review-card-info {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+//   height: 70px;
 // }
