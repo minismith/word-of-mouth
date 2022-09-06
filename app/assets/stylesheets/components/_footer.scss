@@ -2,13 +2,14 @@
   position:fixed;
   bottom:0;
   width: 100%;
-  // background-color:#FBB7C0;
+  background-color:#FBB7C0;
+  border-top: 2px solid black;
 }
 
 .footer ul{
   list-style:none;
   color:#333333;
-  padding: 0 10px 0 10px;
+  padding: 10px 25px 0 25px;
 }
 
 .footer li{
