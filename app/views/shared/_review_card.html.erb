@@ -2,13 +2,14 @@
     <div class="review-card-info">
       <div>
         <h2><%= review.title %></h2>
-        <p>Restaurant: <%= review.restaurant.name %></p>
-        <p>Emoji: <%= review.emoji %></p>
         <p><%= review.content %></p>
         <p>Perfect for: <%= review.perfect_for %></p>
       </div>
-      <div>
-        <p class="review-likes">Likes: <%= review.likes %></p>
+      <div class="review-likes">
+        <p>Likes: <%= review.likes %></p>
+      </div>
+      <div class="review-emoji">
+        <p>Rating: <%= review.emoji %></p>
       </div>
     </div>
 </div>

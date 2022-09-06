@@ -2,7 +2,7 @@
 
   <% @reviews.each do |review| %>
     <div class="feed-review">
-      <p><%= review.user.first_name %> left a review for <%=review.restaurant.name%>... </p>
+      <p><strong><%= review.user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
       <%= render "shared/review_card", review: review %>
     </div>
   <% end %>
