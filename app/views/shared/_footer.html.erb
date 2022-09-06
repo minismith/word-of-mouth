@@ -17,9 +17,11 @@
       <i class="fa-solid fa-magnifying-glass"></i>
       <% end %>
     </li>
-    <!-- <li>
-     <%= link_to user_path(current_user) do %>
-      <i class="fa-solid fa-user"></i>
+    <li>
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user) do %>
+        <i class="fa-solid fa-user"></i>
+      <% end %>
     <% end %>
     </li> -->
   </ul>
