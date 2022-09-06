@@ -1,0 +1,41 @@
+.review-card {
+  overflow: hidden;
+  background: white;
+  width: 300px;
+  margin: 20px;
+  padding: 0px;
+  border-radius: 7px;
+
+   .review-card-image img {
+    object-fit: cover;
+    height: 200px;
+    width: 300px;
+    object-position: center
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 12px;
+      opacity: .7;
+      margin: 0;
+    }
+
+  }
+
+.review-card-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  height: 70px;
+}
+
+// .review-card-pricing {
+
+// }
