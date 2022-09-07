@@ -4,7 +4,6 @@
     <div class="name-and-review d-flex justify-content-between">
       <div class="name-and-cuisine">
         <h1><%= @restaurant.name %></h1>
-        <p><%= @restaurant.cuisine %></p>
       </div>
 
       <%= link_to "Review it", new_review_path, class: "btn btn-outline-dark green-btn px-4" %>
@@ -12,25 +11,29 @@
 
     <div class="restaurant-details d-flex justify-content-between">
       <div class="main-details">
-
-        <p><%= @restaurant.address %></p>
-        <p>Opening hours</p>
-        <%= link_to "Website", @restaurant.website, class: "btn btn-outline-dark py-1 px-2 website-link" %>
+        <p><%= @restaurant.cuisine %> |
+          <% if @restaurant.price == "£" %>
+            <strong><%= @restaurant.price %></strong>££
+          <% elsif @restaurant.price == "££" %>
+            <strong><%= @restaurant.price %></strong>£
+          <% else %>
+            <strong><%= @restaurant.price %></strong>
+          <% end %>
+        </p>
+        <p><i class="fa-solid fa-location-dot"></i> <%= @restaurant.address %></p>
       </div>
 
-      <% if @restaurant.price == "£" %>
-        <p class="price"><strong><%= @restaurant.price %></strong>££</p>
-      <% elsif @restaurant.price == "££" %>
-        <p class="price"><strong><%= @restaurant.price %></strong>£</p>
-      <% else %>
-        <p class="price"><strong><%= @restaurant.price %></strong></p>
-      <% end %>
+      <div class="price-and-links d-flex">
+        <%= link_to icon('fa-regular', 'clock'), restaurants_path, class: "restaurant-link" %>
+        <%= link_to icon('fa-solid', 'earth-europe'), @restaurant.website, class: "restaurant-link" %>
 
+
+      </div>
     </div>
 
   </div>
 
-  <div class="container restaurant-map"
+  <div class="container restaurant-map mt-1 mb-3"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

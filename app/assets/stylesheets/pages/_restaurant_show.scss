@@ -1,14 +1,18 @@
 .restaurant-header {
-  padding: 10px;
-
+  padding: 10px 0;
+  width: 90%;
+  margin: 0 auto;
     p {
       margin-bottom: 0;
     }
+}
 
+.main-details {
+  font-size: 17px;
 }
 
 .name-and-review {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
     h1 {
       margin-bottom: 3px;
@@ -24,11 +28,16 @@
 }
 
 .restaurant-details {
-  .website-link {
-    margin-top: 3px;
+  .restaurant-link {
     height: 33px;
-    border-radius: 10px;
+    color: black;
+    margin-left: 25px;
+    font-size: 28px;
   }
+}
+
+.price-and-links {
+  margin-top: 10px;
 }
 
 .restaurant-map {
@@ -41,11 +50,6 @@
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-}
-
-.price {
-  margin: 60px 10px 0 0;
-  font-size: larger;
 }
 
 .show-review {
