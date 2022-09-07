@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def index
     @reviews = Review.all
   end
@@ -6,14 +7,13 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @restaurants = Restaurant.all
-    @emojis = ["Incredible", "Pretty nice", "Meh", "Disappointing", "Gross"]
     @perfect_for = ["Girls night", "Lads night", "Parents visit", "Date night", "Fancy dinner", "Keep it casual"]
   end
 
   def create
     @review = Review.new(review_params)
+    @review.user = current_user
     @restaurants = Restaurant.all
-    @emojis = ["Incredible", "Pretty nice", "Meh", "Disappointing", "Gross"]
     @perfect_for = ["Girls night", "Lads night", "Parents visit", "Date night", "Fancy dinner", "Keep it casual"]
     if @review.save
       redirect_to reviews_path
@@ -25,7 +25,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:restaurant_id, :title, :content, :emoji, :perfect_for, :photos)
+    params.require(:review).permit(:restaurant_id, :title, :content, :emoji, :perfect_for)
   end
-
 end

@@ -28,3 +28,82 @@
   display: flex;
   justify-content: center;
 }
+
+.emoji-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.emoji-item {
+  flex: 0 0 30%;
+}
+
+.emoji-selector {
+  position: absolute;
+  transform: scale(0);
+
+
+.emoji-selector + label {
+
+}
+}
+
+.emoji-selector:checked + label {
+
+}
+
+
+#review_emoji_amazing + label {
+  font-size: 40px;
+
+}
+
+#review_emoji_amazing:checked + label {
+  font-size: 55px;
+}
+
+
+#review_emoji_average + label {
+  font-size: 40px;
+}
+
+#review_emoji_average:checked + label {
+  font-size: 55px;
+}
+
+
+#review_emoji_gross + label {
+  font-size: 40px;
+}
+
+#review_emoji_gross:checked + label {
+  font-size: 55px;
+}
+
+.perfect-for-item {
+  display: inline-block;
+}
+
+.perfect-for-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.perfect-for-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #F5EE9E;
+  color: #FF70B3;
+  // border: 1px solid #FF70B3;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.perfect-for-selector:checked + label {
+  background-color: #FF70B3;
+  color: white;
+}
