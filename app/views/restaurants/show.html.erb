@@ -1,2 +1,37 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<div class="footer-padding">
+  <div class="restaurant-header pt-3">
+
+    <div class="name-and-review d-flex justify-content-between">
+      <div class="name-and-cuisine">
+        <h1><%= @restaurant.name %></h1>
+        <p><%= @restaurant.cuisine %></p>
+      </div>
+
+      <button>Review it</button>
+    </div>
+
+    <div class="restaurant-details d-flex justify-content-between">
+      <div class="main-details">
+        <p>Address: <%= @restaurant.address %></p>
+        <p>Opening hours: EXPAND THIS</p>
+        <p>Website: <%= @restaurant.website %></p>
+      </div>
+
+      <p><%= @restaurant.price %></p>
+    </div>
+
+  </div>
+
+  <div class="restaurant-map">
+
+
+  </div>
+
+
+  <div class="restaurant-reviews">
+
+
+  </div>
+
+
+</div>
