@@ -28,3 +28,90 @@
   display: flex;
   justify-content: center;
 }
+
+.emoji-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.emoji-item {
+  flex: 0 0 30%;
+}
+
+.emoji-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.emoji-selector + label {
+
+}
+
+.emoji-selector:checked + label {
+  color: white !important;
+}
+
+
+#review_emoji_meh + label {
+  color: #FD1015;
+}
+
+#review_emoji_meh:checked + label {
+  background-color: #FD1015;
+  border-color: #FD1015;
+}
+
+
+#review_emoji_amazing + label {
+  color: #FFC65A;
+}
+
+#review_emoji_amazing:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+}
+
+
+#review_emoji_gross + label {
+  color: #62DDF5;
+}
+
+#review_emoji_gross:checked + label {
+  background-color: #62DDF5;
+  border-color: #62DDF5;
+}
+
+.perfect-for-item {
+  display: inline-block;
+}
+
+.perfect-for-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.perfect-for-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #F5EE9E;
+  color: #FF70B3;
+  // border: 1px solid #FF70B3;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.perfect-for-selector:checked + label {
+  background-color: #FF70B3;
+  color: white;
+}
+
+// input[type=radio] ~ label::before {
+//   content: "f096";
+//   display: inline-block;
+//   font-family: "FontAwesome";
+//   margin-right: 8px;
+// }
