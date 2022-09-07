@@ -5,7 +5,7 @@
         <h2><%= review.title %></h2>
     </div>
    <div class="review-emoji">
-      <p><%= review.emoji %></p>
+      <p><%= Review::EMOJIS.key(review.emoji) %></p>
     </div>
   </div>
     <div class="review-content">
