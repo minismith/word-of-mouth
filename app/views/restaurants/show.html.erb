@@ -1,2 +1,55 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<div class="footer-padding">
+  <div class="restaurant-header pt-3">
+
+    <div class="name-and-review d-flex justify-content-between">
+      <div class="name-and-cuisine">
+        <h1><%= @restaurant.name %></h1>
+      </div>
+
+      <%= link_to "Review it", new_review_path, class: "btn btn-outline-dark green-btn px-4" %>
+    </div>
+
+    <div class="restaurant-details d-flex justify-content-between">
+      <div class="main-details">
+        <p><%= @restaurant.cuisine %> |
+          <% if @restaurant.price == "£" %>
+            <strong><%= @restaurant.price %></strong>££
+          <% elsif @restaurant.price == "££" %>
+            <strong><%= @restaurant.price %></strong>£
+          <% else %>
+            <strong><%= @restaurant.price %></strong>
+          <% end %>
+        </p>
+        <p><i class="fa-solid fa-location-dot"></i> <%= @restaurant.address %></p>
+      </div>
+
+      <div class="price-and-links d-flex">
+        <%= link_to icon('fa-regular', 'clock'), restaurants_path, class: "restaurant-link" %>
+        <%= link_to icon('fa-solid', 'earth-europe'), @restaurant.website, class: "restaurant-link" %>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container restaurant-map mt-1 mb-3"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+
+  <div class="container restaurant-reviews">
+
+ <% @reviews.each do |review| %>
+    <div class="show-review">
+      <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review... </p>
+      <%= render "shared/review_card", review: review %>
+    </div>
+  <% end %>
+
+  </div>
+
+
+</div>

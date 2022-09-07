@@ -1,0 +1,57 @@
+.restaurant-header {
+  padding: 10px 0;
+  width: 90%;
+  margin: 0 auto;
+    p {
+      margin-bottom: 0;
+    }
+}
+
+.main-details {
+  font-size: 17px;
+}
+
+.name-and-review {
+  margin-bottom: 10px;
+
+    h1 {
+      margin-bottom: 3px;
+    }
+
+    .btn {
+      background-color: #D0F0C0;
+      border: 2px solid black;
+      font-weight: bold;
+      height: 40px;
+      border-radius: 10px;
+    }
+}
+
+.restaurant-details {
+  .restaurant-link {
+    height: 33px;
+    color: black;
+    margin-left: 25px;
+    font-size: 28px;
+  }
+}
+
+.price-and-links {
+  margin-top: 10px;
+}
+
+.restaurant-map {
+  height: 230px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.restaurant-reviews {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-review {
+  margin: 0 auto 10px auto;
+}
