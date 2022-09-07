@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container footer-padding">
   <div class="review-title">
     <h1>How was it?</h1>
   </div>
@@ -7,17 +7,18 @@
 
     <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where", collection: @restaurants %></h2>
     <h2><%= f.input :title, input_html: {class: "review-input-box"}, label: "The topline" %></h2>
+    <h2><%= f.input :emoji, as: :radio_buttons, label: "Pick an emoji", collection_wrapper_tag: 'div',
+        collection_wrapper_class: 'emoji-wrapper',
+        item_wrapper_class: 'emoji-item',
+        input_html: {class: 'emoji-selector'},
+        class: 'with-font',
+        collection: Review::EMOJIS %></h2>
     <h2><%= f.input :content, input_html: {class: "review-input-box"}, label: "Give it to us..." %></h2>
 
     <h2><%= f.input :perfect_for, as: :check_boxes, label: "Perfect for...", input_html: { class: "perfect-for-selector" },
                   item_wrapper_class: 'perfect-for-item', collection: @perfect_for %></h2>
 
-    <h2><%= f.input :emoji, as: :radio_buttons, label: "Pick an emoji", collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'emoji-wrapper',
-            item_wrapper_class: 'emoji-item',
-            input_html: {class: 'emoji-selector'},
-            class: 'with-font',
-            collection: Review::EMOJIS %></h2>
+
 
     <div class="submit-review">  <%= f.button :submit, class: 'btn submit-review-btn', value: "Add review" %> </div>
     </div>
