@@ -23,7 +23,7 @@
         <p><i class="fa-solid fa-location-dot"></i> <%= @restaurant.address %></p>
       </div>
 
-      <div class="price-and-links d-flex">
+      <div class="d-flex">
         <%= link_to icon('fa-regular', 'clock'), restaurants_path, class: "restaurant-link" %>
         <%= link_to icon('fa-solid', 'earth-europe'), @restaurant.website, class: "restaurant-link" %>
 
