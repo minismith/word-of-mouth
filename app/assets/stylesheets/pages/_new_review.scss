@@ -96,12 +96,11 @@
   display: inline-block;
   font-size: 1.3rem;
   border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
+  padding: 8px;
   background-color: #F5EE9E;
   color: #FF70B3;
   // border: 1px solid #FF70B3;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  margin: 8px;
 }
 
 .perfect-for-selector:checked + label {
