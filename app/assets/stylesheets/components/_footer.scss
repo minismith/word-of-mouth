@@ -24,8 +24,13 @@
     :last-child {
       margin-right: 8px;
     }
+
 }
 
 .footer li{
   display:inline;
+}
+
+.active i {
+  color: white;
 }
