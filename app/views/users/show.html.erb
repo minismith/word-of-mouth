@@ -4,8 +4,31 @@
   <div class="container pb-5">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
     <h2>User's name</h2>
+      <div class="mytabs">
+        <input type="radio" name="mytabs" id="friends" checked="checked">
+        <label for="friends"><h3>Friends</h3></label>
+        <div class="tab"><%= render "shared/friends_card" %></div>
 
-    <ul class="list-inline tabs-underlined">
+        <input type="radio" name="mytabs" id="reviews">
+        <label for="reviews"><h3>Reviews</h3></label>
+        <div class="tab">
+          <div style="width: 100%; height: 425px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+
+        <input type="radio" name="mytabs" id="wishlist">
+        <label for="wishlist"><h3>Wishlist</h3></label>
+        <div class="tab"><h1>wishlist of restaurants</h1></div>
+
+      </div>
+
+
+
+
+    <!-- <ul class="list-inline tabs-underlined">
       <li>
         <h3><a href="#" class="tab-underlined active">Friends</a></h3>
         <% render "shared/tab_friends" %>
@@ -18,6 +41,8 @@
         <h3><a href="#" class="tab-underlined">Wishlist</a></h3>
         <% render "shared/tab_wishlist" %>
       </li>
-    </ul>
+    </ul> -->
+
+
   </div>
 </div>
