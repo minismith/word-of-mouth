@@ -32,16 +32,22 @@
 }
 
 .restaurant-map {
-  border: solid 2px black;
-  height: 220px;
+  height: 230px;
+  width: 90%;
+  border-radius: 10px;
 }
 
 .restaurant-reviews {
-  // border: solid 2px black;
-  height: 300px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .price {
   margin: 60px 10px 0 0;
   font-size: larger;
+}
+
+.show-review {
+  margin: 0 auto 10px auto;
 }

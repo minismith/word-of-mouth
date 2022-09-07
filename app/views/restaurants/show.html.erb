@@ -30,15 +30,21 @@
 
   </div>
 
-  <div class="container restaurant-map">
-
-  MAP WILL GO HERE
-
+  <div class="container restaurant-map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
 
   <div class="container restaurant-reviews">
 
+ <% @reviews.each do |review| %>
+    <div class="show-review">
+      <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review... </p>
+      <%= render "shared/review_card", review: review %>
+    </div>
+  <% end %>
 
   </div>
 
