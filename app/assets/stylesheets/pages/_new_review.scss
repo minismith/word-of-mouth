@@ -45,16 +45,7 @@
 }
 
 .emoji-selector + label {
-  display: block;
-  cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-  font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
-  border: 1px solid #EAEAEA;
-  border-radius: 4px;
-  background-color: white;
+
 }
 
 .emoji-selector:checked + label {
@@ -117,3 +108,10 @@
   background-color: #FF70B3;
   color: white;
 }
+
+// input[type=radio] ~ label::before {
+//   content: "f096";
+//   display: inline-block;
+//   font-family: "FontAwesome";
+//   margin-right: 8px;
+// }
