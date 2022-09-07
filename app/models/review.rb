@@ -6,4 +6,6 @@ class Review < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validates :emoji, presence: true
+
+  EMOJIS = ["Amazing", "Meh", "Gross"]
 end
