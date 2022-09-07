@@ -3,7 +3,7 @@
 <div class="banner">
   <div class="container pb-5">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
-    <h2>User's name</h2>
+    <h2><%= @user.first_name%> <%=@user.last_name %></h2>
       <div class="mytabs">
         <input type="radio" name="mytabs" id="friends" checked="checked">
         <label for="friends"><h3>Friends</h3></label>

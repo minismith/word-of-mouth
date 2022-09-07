@@ -1,28 +1,53 @@
 
-
 <div class="footer">
   <ul class="d-flex justify-content-between">
-    <li class="active">
-    <%= link_to reviews_path do %>
-      <i class="fa-solid fa-house"></i>
-    <% end %>
-    </li>
-    <li>
-      <%= link_to new_review_path do %>
-      <i class="fa-solid fa-plus"></i>
+    <li >
+      <% if (params[:controller] == "reviews" && params[:action] == "index") %>
+          <%= link_to reviews_path, class: "active" do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
+        <% else %>
+          <%= link_to reviews_path do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
       <% end %>
     </li>
     <li>
-      <%= link_to restaurants_path do %>
-      <i class="fa-solid fa-magnifying-glass"></i>
+      <% if (params[:controller] == "reviews" && params[:action] == "new") %>
+          <%= link_to new_review_path, class: "active" do %>
+            <i class="fa-solid fa-plus"></i>
+          <% end %>
+        <% else %>
+          <%= link_to new_review_path do %>
+            <i class="fa-solid fa-plus"></i>
+          <% end %>
       <% end %>
     </li>
     <li>
-    <% if user_signed_in? %>
-      <%= link_to user_path(current_user) do %>
-        <i class="fa-solid fa-user"></i>
+      <% if (params[:controller] == "restaurants" && params[:action] == "index") %>
+          <%= link_to restaurants_path, class: "active" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+        <% else %>
+          <%= link_to restaurants_path do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
       <% end %>
-    <% end %>
+    </li>
+    <li>
+    <% if (params[:controller] == "users" && params[:action] == "show") %>
+        <% if user_signed_in? %>
+          <%= link_to user_path(current_user), class: 'active' do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% if user_signed_in? %>
+            <%= link_to user_path(current_user) do %>
+              <i class="fa-solid fa-user"></i>
+            <% end %>
+          <% end %>
+      <% end %>
     </li>
   </ul>
 </div>
