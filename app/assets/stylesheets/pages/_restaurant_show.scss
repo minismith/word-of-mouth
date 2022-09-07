@@ -1,13 +1,47 @@
 .restaurant-header {
-  border: solid 2px black;
+  padding: 10px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+}
+
+.name-and-review {
+  margin-bottom: 15px;
+
+    h1 {
+      margin-bottom: 3px;
+    }
+
+    .btn {
+      background-color: #D0F0C0;
+      border: 2px solid black;
+      font-weight: bold;
+      height: 40px;
+      border-radius: 10px;
+    }
+}
+
+.restaurant-details {
+  .website-link {
+    margin-top: 3px;
+    height: 33px;
+    border-radius: 10px;
+  }
 }
 
 .restaurant-map {
   border: solid 2px black;
-  height: 300px;
+  height: 220px;
 }
 
 .restaurant-reviews {
-  border: solid 2px black;
+  // border: solid 2px black;
   height: 300px;
+}
+
+.price {
+  margin: 60px 10px 0 0;
+  font-size: larger;
 }

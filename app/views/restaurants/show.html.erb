@@ -7,28 +7,37 @@
         <p><%= @restaurant.cuisine %></p>
       </div>
 
-      <button>Review it</button>
+      <%= link_to "Review it", new_review_path, class: "btn btn-outline-dark green-btn px-4" %>
     </div>
 
     <div class="restaurant-details d-flex justify-content-between">
       <div class="main-details">
-        <p>Address: <%= @restaurant.address %></p>
-        <p>Opening hours: EXPAND THIS</p>
-        <p>Website: <%= @restaurant.website %></p>
+
+        <p><%= @restaurant.address %></p>
+        <p>Opening hours</p>
+        <%= link_to "Website", @restaurant.website, class: "btn btn-outline-dark py-1 px-2 website-link" %>
       </div>
 
-      <p><%= @restaurant.price %></p>
+      <% if @restaurant.price == "£" %>
+        <p class="price"><strong><%= @restaurant.price %></strong>££</p>
+      <% elsif @restaurant.price == "££" %>
+        <p class="price"><strong><%= @restaurant.price %></strong>£</p>
+      <% else %>
+        <p class="price"><strong><%= @restaurant.price %></strong></p>
+      <% end %>
+
     </div>
 
   </div>
 
-  <div class="restaurant-map">
+  <div class="container restaurant-map">
 
+  MAP WILL GO HERE
 
   </div>
 
 
-  <div class="restaurant-reviews">
+  <div class="container restaurant-reviews">
 
 
   </div>
