@@ -6,10 +6,16 @@
           <%= submit_tag "Search", class:"btn" %>
           <% end %>
 
-<div style="width: 100%; height: 350px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="map-restaurant-index">
+  <div style="width: 100%; height: 350px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
-<%= render "shared/restaurant_main_card" %>
+
+
+<% @restaurants.each do |restaurant| %>
+      <%= render "shared/restaurant_main_card", restaurant: restaurant %>
+<% end %>
