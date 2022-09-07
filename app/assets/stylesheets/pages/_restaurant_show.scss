@@ -28,16 +28,18 @@
 }
 
 .restaurant-details {
+  border: solid 2px black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+
   .restaurant-link {
     height: 33px;
     color: black;
     margin-left: 25px;
-    font-size: 28px;
+    font-size: 30px;
+    margin-top: 3px;
   }
-}
-
-.price-and-links {
-  margin-top: 10px;
 }
 
 .restaurant-map {
