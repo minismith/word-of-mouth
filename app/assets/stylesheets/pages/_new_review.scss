@@ -83,19 +83,21 @@
 
 .perfect-for-item {
   display: inline-block;
+  padding: 5px;
 }
 
 .perfect-for-selector {
   position: absolute;
   transform: scale(0);
+
 }
 
 .perfect-for-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 25px;
   border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
+  padding: 5px;
   background-color: #F5EE9E;
   color: #FF70B3;
   // border: 1px solid #FF70B3;
