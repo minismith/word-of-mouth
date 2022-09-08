@@ -4,13 +4,13 @@
           params[:query],
           class: "form-control ", placeholder: "Find a restaurant" %>
           <%= submit_tag "Search", class:"btn border" %>
-          <%= submit_tag "Filter", class:"btn btn_filter" %>
-           <% end %>
+          <%# <%= submit_tag "Filter", class:"btn btn_filter" %>
 
 
-<%# <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn_filter" data-toggle="modal" data-target="#exampleModalCenter">
+  Filter
 </button>
 
 <!-- Modal -->
@@ -18,23 +18,61 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Find a Restaurant</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
-        ...
+      <h3>Location</h3>
+       <%= form_with url: restaurants_path, method: :get, class: "d-flex" do |form|%>
+        <%=text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "where would you like to go?"%>
+
+        <br>
+      <h3>Cuisine</h3>
+        <%= form.select :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
+         <br>
+         <br>
+        <h3>Price</h3>
+
+         <%= form.check_box :price %>
+         <%= form.label :price, "£" %>
+         <%= form.check_box :price%>
+         <%= form.label :price, "££" %>
+         <%= form.check_box :price%>
+         <%= form.label :price, "£££" %>
+        <br>
+        <br>
+       <h3>Perfect For ...</h3>
+
+       <%= form.radio_button :perfect_for, "girls night" %>
+       <%= form.label :perfect_for, "girls night" %>
+       <%= form.radio_button :perfect_for,"girls night" %>
+       <%= form.label :perfect_for, "lads night" %>
+       <%= form.radio_button :perfect_for,"girls night" %>
+       <%= form.label :perfect_for, "date night" %>
+       <%= form.radio_button :perfect_for,"girls night" %>
+       <%= form.label :perfect_for, "fancy dinner" %>
+       <%= form.radio_button :perfect_for,"girls night" %>
+       <%= form.label :perfect_for, "keep it casual" %>
+       <%= form.radio_button :perfect_for,"girls night" %>
+       <%= form.label :perfect_for, "Parents visit" %>
+        <% end %>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Search</button>
       </div>
     </div>
   </div>
-</div> %>
+</div>
 
-
+<% end %>
 
 
 
