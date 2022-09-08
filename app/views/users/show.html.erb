@@ -7,7 +7,10 @@
       <div class="mytabs">
         <input type="radio" name="mytabs" id="friends" checked="checked">
         <label for="friends"><h3>Friends</h3></label>
-        <div class="tab"><%= render "shared/friends_card" %></div>
+        <div class="tab">
+        <%= render "shared/friends_card" %>
+        <%= render "shared/friends_card" %>
+        </div>
 
         <input type="radio" name="mytabs" id="reviews">
         <label for="reviews"><h3>Reviews</h3></label>
