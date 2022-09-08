@@ -1,0 +1,42 @@
+.modal-header {
+  display: flex;
+  border: none;
+}
+
+h3 {
+  text-align: center;
+}
+
+.close {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+}
+
+.modal {
+  width: 80%;
+  margin: 50% 10%;
+
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.btn-learn-more a {
+  text-decoration: none;
+  color: white;
+  font-weight:bolder;
+}
+
+.btn-learn-more {
+  border-radius: 15px;
+  background-color: #333333 ;
+  width: 200px;
+  height: 30px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: white;
+}

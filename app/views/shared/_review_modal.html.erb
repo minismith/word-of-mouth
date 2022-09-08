@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="modal" id="review-modal<%= review.id %>"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <h5 class="modal-title">Review from <%= review.user.first_name.capitalize %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3><%= review.title%></h3>
+          <p><strong>Restaurant:</strong> <%= review.restaurant.name %></p>
+          <p><%= review.content%></p>
+          <p><strong>Rating:  </strong><%= Review::EMOJIS.key(review.emoji) %></p>
+          <p><strong>Perfect for:</strong></p>
+          <% review.perfect_for.each do |category| %>
+          <li><%= category %></li>
+          <% end %>
+
+        </div>
+        <div class="modal-footer">
+          <div class="btn btn-learn-more">
+            <%= link_to "More about #{review.restaurant.name}", restaurant_path(review.restaurant)%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

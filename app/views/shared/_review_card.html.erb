@@ -1,4 +1,4 @@
-<div class="review-card">
+<div class="review-card" data-toggle="modal" data-target="#review-modal<%= review.id %>">
   <div class="review-top-row">
     <div class="avatar-title">
         <i class="fa-regular fa-face-smile me-3 "></i>
@@ -11,4 +11,5 @@
     <div class="review-content">
       <p><%= review.content[0, 120]%>...</p>
     </div>
+    <%= render "shared/review_modal", review: review %>
 </div>
