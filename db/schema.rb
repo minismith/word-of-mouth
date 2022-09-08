@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_07_155720) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_143350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_155720) do
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "friend_id"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_friendships_on_user_id"
@@ -53,8 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_155720) do
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
-    t.string "website"
     t.text "opening_hours"
+    t.string "website"
   end
 
   create_table "reviews", force: :cascade do |t|
