@@ -7,15 +7,14 @@
   border: 2px solid black;
   border-radius: 10px;
   height: 71px;
-
+  width: 100%;
 }
-
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
 }
-
 .notification p {
   margin: 0 auto;
   line-height: 1.4;
+  text-align: left;
 }
