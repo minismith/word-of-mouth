@@ -66,7 +66,21 @@
   display: block;
 }
 
-.mytabs h3:target {
-  border-bottom: 3px solid black;
+.tabs {
+  order: 1;
+  width: 100%;
+  border-bottom: 3px solid #dddddd;
+  line-height: 1.5;
+  font-size: 0.9em;
+  display: none;
+}
 
+.mytabs input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: black;
+  border-bottom: 3px solid black;
+}
+
+.mytabs input[type="radio"]:checked + label + .tab {
+  display: initial;
 }
