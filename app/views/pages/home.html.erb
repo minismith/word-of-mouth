@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="landing-container">
+
+  <div id="square" class="landing-shape">
+    <p class="shape-text">Find a restaurant</p>
+  </div>
+
+  <div id="trapezoid" class="landing-shape">
+    <p class="shape-text">Read your friends' reviews</p>
+  </div>
+
+  <div id="oval" class="landing-shape">
+    <p class="shape-text">Save one for later</p>
+  </div>
+
+  <div id="rectangle" class="landing-shape">
+    <p class="shape-text">Rate where you've been</p>
+  </div>
+
+  <div id="circle" class="landing-shape">
+    <p class="shape-text">Start a conversation</p>
+  </div>
+
+  <div id="landing-main-content">
+    <h1 id="landing-header">Word of Mouth</h1>
+    <p>A social network that celebrates our shared tastes.</p>
+
+    <%= link_to "Log in", new_user_session_path, class: "btn landing-btn" %>
+    <%= link_to "Sign up",  new_user_registration_path, class: "btn landing-btn" %>
+
+  </div>
+
+  <%# <div class="sun">
+      <div class="sun-text">
+        Restaurants
+      </div>
+  </div> %>
+
+
+</div>
