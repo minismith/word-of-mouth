@@ -32,11 +32,12 @@
 .emoji-wrapper {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .emoji-item {
-  flex: 0 0 30%;
+  flex: 0 0 20%;
+  display: flex;
+  justify-content: center;
 }
 
 .emoji-selector {
@@ -63,6 +64,15 @@
   font-size: 55px;
 }
 
+#review_emoji_nice + label {
+  font-size: 40px;
+
+}
+
+#review_emoji_nice:checked + label {
+  font-size: 55px;
+}
+
 
 #review_emoji_average + label {
   font-size: 40px;
@@ -72,6 +82,14 @@
   font-size: 55px;
 }
 
+
+#review_emoji_angry + label {
+  font-size: 40px;
+}
+
+#review_emoji_angry:checked + label {
+  font-size: 55px;
+}
 
 #review_emoji_gross + label {
   font-size: 40px;
@@ -95,12 +113,12 @@
 .perfect-for-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 25px;
+  font-size: 22px;
   border-radius: 50rem;
   padding: 5px;
   background-color: #F5EE9E;
   color: #FF70B3;
-  // border: 1px solid #FF70B3;
+  border: 1px solid #D0F0C0;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
