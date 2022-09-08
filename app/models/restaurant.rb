@@ -17,4 +17,6 @@ class Restaurant < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
+  CUISINE = ["Italian", "Indian", "Turkish", "Chinese", "Japanese", "Middle eastern", "Greek", "Thai", "Korean",
+             "American", "Argentinian", "Vietnamese", "North African", "Carribean", "Mexican"].sort
 end
