@@ -53,8 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_143350) do
     t.string "photo"
     t.float "latitude"
     t.float "longitude"
-    t.text "opening_hours"
     t.string "website"
+    t.text "opening_hours"
   end
 
   create_table "reviews", force: :cascade do |t|
