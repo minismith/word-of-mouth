@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  get 'friendships/update'
+  get 'friendships/create'
+  get 'friendships/destroy'
   resources :restaurants, only: %i[index show new create]
   resources :reviews
   resources :users, only: [:show] do

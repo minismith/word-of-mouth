@@ -3,14 +3,14 @@
 
     <div class="notification-content">
       <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-      <p><%= friend.first_name%> <%=friend.last_name %></p>
+      <p><%= friend.first_name%> <%=friend.last_name %> </p>
     </div>
 
     <div class="friend-action-icons">
-      <% if @user == current_user %>
-          <%= link_to icon('fa-solid', 'user-minus'),
-          friendships_destroy_path(friendship_id: Friendship.find_invitation(@user.id, friend.id)) %>
-      <% end %>
+      <%= link_to icon('fa-solid', 'check'),
+      friendships_update_path(friendship_id: invitation.id) %>
+      <%= link_to icon('fa-solid', 'xmark'),
+      friendships_destroy_path(friendship_id: invitation.id), class: "remove-friend" %>
     </div>
 
   </div>

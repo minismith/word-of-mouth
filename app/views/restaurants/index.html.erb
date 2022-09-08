@@ -1,12 +1,11 @@
-<%= form_tag restaurants_path, method: :get, class:
-          "d-flex" do%>
+<%= form_tag restaurants_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
           params[:query],
           class: "form-control ", placeholder: "Find a restaurant" %>
           <%= submit_tag "Search", class:"btn border" %>
           <%# <%= submit_tag "Filter", class:"btn btn_filter" %>
 
-
+<% end %>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn_filter" data-toggle="modal" data-target="#exampleModalCenter">
@@ -25,15 +24,15 @@
       </div>
 
       <div class="modal-body">
-      <h3>Location</h3>
-       <%= form_with url: restaurants_path, method: :get, class: "d-flex" do |form|%>
-        <%=text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "where would you like to go?"%>
+        <h3>Location</h3>
+        <%= form_with url: restaurants_path, method: :get do |form|%>
+          <%=text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "where would you like to go?"%>
 
-        <br>
-      <h3>Cuisine</h3>
+          <br>
+        <h3>Cuisine</h3>
         <%= form.select :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
          <br>
          <br>
@@ -72,7 +71,7 @@
   </div>
 </div>
 
-<% end %>
+
 
 
 

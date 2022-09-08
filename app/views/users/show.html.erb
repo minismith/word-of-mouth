@@ -1,15 +1,43 @@
-<!-- <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p> -->
 <div class="banner">
   <div class="container pb-5">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
-    <h2><%= @user.first_name%> <%=@user.last_name %></h2>
+
+    <h2><%= @user.first_name%> <%=@user.last_name %>
+      <% if @user != current_user %>
+          <%= link_to icon('fa-solid', 'user-plus'), friendships_create_path(ids: {id1: current_user.id, id2: @user.id}), class:"add-friend" %>
+      <% end %>
+    </h2>
+
       <div class="mytabs">
         <input type="radio" name="mytabs" id="friends" checked="checked">
         <label for="friends"><h3>Friends</h3></label>
         <div class="tab">
-        <%= render "shared/friends_card" %>
-        <%= render "shared/friends_card" %>
+
+        <% if @user == current_user %>
+          <h3> Your friends: </h3>
+        <% else %>
+          <h3> <%= @user.first_name%>'s friends: </h3>
+        <% end %>
+
+        <% @user.friends.each do |friend| %>
+
+         <%= render "shared/friends_card", friend: friend %>
+
+        <% end %>
+
+        <% if @user == current_user %>
+
+          <h3 class="mt-4"> Your friend requests: </h3>
+
+            <% @user.pending_friendships.each do |invitation| %>
+
+              <%= render "shared/friend_request_card", friend: User.find(invitation.user_id), invitation: invitation %>
+
+            <% end %>
+
+        <% end %>
+
+
         </div>
 
         <input type="radio" name="mytabs" id="reviews">
@@ -20,12 +48,14 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-          <div class="user-review"> User's reviews go here </div>
+          <div class="user-review">
+            <%= render "shared/review_card", reviews: @reviews %>
+          </div>
         </div>
 
         <input type="radio" name="mytabs" id="wishlist">
         <label for="wishlist"><h3>Wishlist</h3></label>
-        <div class="tab">User's Wishlist goes here</div>
+        <div class="tab">Wishlist to be here</div>
 
       </div>
 

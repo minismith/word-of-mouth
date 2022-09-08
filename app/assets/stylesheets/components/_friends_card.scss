@@ -1,5 +1,6 @@
 .notification {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
   background: white;
@@ -8,13 +9,27 @@
   border-radius: 10px;
   height: 71px;
   width: 100%;
+
+    i {
+      color: black;
+    }
+
+    .remove-friend {
+      margin-left: 20px;
+    }
+
+    .notification-content {
+      align-items: center;
+      display: flex;
+    }
+
+    p {
+      margin: 0 0 0 10px;
+      text-align: left;
+    }
 }
-.notification .notification-content {
-  flex-grow: 1;
-  padding: 0 24px;
-}
-.notification p {
-  margin: 0 auto;
-  line-height: 1.4;
-  text-align: left;
+
+.friend-link {
+  text-decoration: none;
+  color: black;
 }
