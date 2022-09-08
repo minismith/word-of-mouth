@@ -20,12 +20,12 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-          <div class="user-review"> User's reviews go here </div>
+          <div class="user-review"><%= render "shared/review_card"%></div>
         </div>
 
         <input type="radio" name="mytabs" id="wishlist">
         <label for="wishlist"><h3>Wishlist</h3></label>
-        <div class="tab">User's Wishlist goes here</div>
+        <div class="tab"><%= render "shared/restaurant_main_card" %></div>
 
       </div>
 
