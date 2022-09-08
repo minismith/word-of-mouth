@@ -1,5 +1,18 @@
 class RestaurantsController < ApplicationController
+
   def index
+    if params[:query].present?
+    @restaurants = Restaurant.search_by_name_and_address(params[:query])
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+      }
+    end
+  # elsif params[query1].present?
+  #   @restaurant = Restaurant.where(sql_query, query: "%#{params[:query1]}%")
+  else
     @restaurants = Restaurant.all
     @markers = @restaurants.geocoded.map do |restaurant|
       {
@@ -9,6 +22,7 @@ class RestaurantsController < ApplicationController
       }
     end
   end
+end
 
   def show
     @restaurant = Restaurant.find(params[:id])
