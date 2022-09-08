@@ -1,6 +1,7 @@
 .review-title {
   padding: 15px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .review-drop-down {
@@ -10,18 +11,19 @@
 .review-input-box {
   background-color: white;
   border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
 
 }
 
 .submit-review-btn {
-  border: 2px solid white;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 15px;
   background-color: #FBB7C0;
   width: 200px;
   height: 70px;
-  font-size: 20px;
-  font-family: 'DM Sans', sans-serif;
-
+  font-size: 18px;
+  font-family: 'Corben', cursive;
+  margin-bottom: 10px;
 }
 
 .submit-review {
@@ -113,12 +115,12 @@
 .perfect-for-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 50rem;
-  padding: 5px;
+  padding: 10px;
   background-color: #F5EE9E;
   color: #FF70B3;
-  border: 1px solid #D0F0C0;
+  // border: 1px solid #D0F0C0;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }

@@ -5,7 +5,7 @@
   <div id="review_form">
   <%= simple_form_for [@review] do |f| %>
 
-    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where", collection: @restaurants %></h2>
+    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants %></h2>
     <h2><%= f.input :title, input_html: {class: "review-input-box"}, label: "The topline" %></h2>
     <h2><%= f.input :emoji, as: :radio_buttons, label: "Pick an emoji", collection_wrapper_tag: 'div',
         collection_wrapper_class: 'emoji-wrapper',
