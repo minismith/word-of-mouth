@@ -5,6 +5,7 @@
       <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
       <%= render "shared/review_card", review: review %>
     </div>
-  <% end %>
+    <%= render "shared/review_modal", review: review %>
+<% end %>
 
 </div>
