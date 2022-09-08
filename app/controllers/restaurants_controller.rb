@@ -10,8 +10,18 @@ class RestaurantsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
       }
     end
-  # elsif params[query1].present?
-  #   @restaurant = Restaurant.where(sql_query, query: "%#{params[:query1]}%")
+
+  elsif params[:query1].present?
+    @restaurant = Restaurant.search_by_name_and_address(params[:query1])
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+      }
+    end
+
   else
     @restaurants = Restaurant.all
     @markers = @restaurants.geocoded.map do |restaurant|

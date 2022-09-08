@@ -26,8 +26,8 @@
       <div class="modal-body">
         <h3>Location</h3>
         <%= form_with url: restaurants_path, method: :get do |form|%>
-          <%=text_field_tag :query,
-          params[:query],
+          <%=text_field_tag :query1,
+          params[:query1],
           class: "form-control",
           placeholder: "where would you like to go?"%>
 
@@ -60,14 +60,14 @@
        <%= form.label :perfect_for, "keep it casual" %>
        <%= form.radio_button :perfect_for,"parents visit" %>
        <%= form.label :perfect_for, "Parents visit" %>
-        <% end %>
+
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%# <button type="button" class="btn btn-primary">Search</button> %>
-        <%= form_tag restaurants_path, method: :get, class: "d-flex" do %>
-        <%= submit_tag "Search", class:"btn btn-primary" %>
+
+        <%= form.submit "Search", class:"btn btn-primary" %>
         <% end %>
       </div>
     </div>
