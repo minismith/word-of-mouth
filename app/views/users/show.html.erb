@@ -7,12 +7,12 @@
       <div class="mytabs">
         <input type="radio" name="mytabs" id="friends" checked="checked">
         <label for="friends"><h3>Friends</h3></label>
-        <div class="tab"></div>
+        <div class="tab"><%= render "shared/friends_card" %></div>
 
         <input type="radio" name="mytabs" id="reviews">
         <label for="reviews"><h3>Reviews</h3></label>
         <div class="tab">
-          <div class="user-show-map" style="width: 100%; height: 425px;"
+          <div style="width: 100%; height: 425px;"
             data-controller="map"
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -24,5 +24,6 @@
         <div class="tab"><h1>wishlist of restaurants</h1></div>
 
       </div>
+
   </div>
 </div>
