@@ -7,5 +7,5 @@ class Review < ApplicationRecord
   validates :content, presence: true
   validates :emoji, presence: true
 
-  EMOJIS = {'😍' => "amazing", '😐' => "average", '🤮' => "gross"}
+  EMOJIS = {'😍' => "amazing", '😊' => "nice", '😐' => "average", '😡' => "angry", '🤢' => "gross"}
 end
