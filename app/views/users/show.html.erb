@@ -3,7 +3,7 @@
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
 
     <h2><%= @user.first_name%> <%=@user.last_name %>
-      <% if @user != current_user %>
+      <% if @user != current_user && Friendship.reacted?(@user.id, current_user.id) == false %>
           <%= link_to icon('fa-solid', 'user-plus'), friendships_create_path(ids: {id1: current_user.id, id2: @user.id}), class:"add-friend" %>
       <% end %>
     </h2>
