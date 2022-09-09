@@ -54,6 +54,10 @@
               <%= render "shared/review_card", review: review %>
             </div>
           <% end %>
+
+           <div class="btn btn-learn-more">
+              <%= link_to "Edit profile", edit_user_registration_path %>
+          </div>
         </div>
 
         <input type="radio" name="mytabs" id="wishlist">
