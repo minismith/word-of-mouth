@@ -20,6 +20,12 @@
   }
 }
 
+.add-friend {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+
 .user-show-map {
   height: 230px;
   width: 90%;
@@ -89,4 +95,12 @@
 
 .mytabs input[type="radio"]:checked + label + .tab {
   display: initial;
+}
+
+.user-restaurant h3 {
+  text-align: left;
+}
+
+.text-left-card {
+  text-align: left;
 }
