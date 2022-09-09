@@ -15,13 +15,13 @@ class RestaurantsController < ApplicationController
 
       @restaurants = Restaurant.search_by_name_and_address(params[:query1])
 
-    @markers = @restaurants.geocoded.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
-      }
-    end
+     @markers = @restaurants.geocoded.map do |restaurant|
+       {
+         lat: restaurant.latitude,
+         lng: restaurant.longitude,
+         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+       }
+     end
 
     else
       @restaurants = Restaurant.all
