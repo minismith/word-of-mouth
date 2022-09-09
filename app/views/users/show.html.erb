@@ -3,7 +3,7 @@
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
 
     <h2><%= @user.first_name%> <%=@user.last_name %>
-      <% if @user != current_user %>
+      <% if @user != current_user && Friendship.reacted?(@user.id, current_user.id) == false %>
           <%= link_to icon('fa-solid', 'user-plus'), friendships_create_path(ids: {id1: current_user.id, id2: @user.id}), class:"add-friend" %>
       <% end %>
     </h2>
@@ -54,13 +54,23 @@
               <%= render "shared/review_card", review: review %>
             </div>
           <% end %>
+
+           <div class="btn btn-learn-more">
+              <%= link_to "Edit profile", edit_user_registration_path %>
+          </div>
         </div>
 
         <input type="radio" name="mytabs" id="wishlist">
         <label for="wishlist"><h3>Wishlist</h3></label>
-        <div class="tab">Wishlist to be here</div>
+        <div class="tab">
+            <div class="user-restaurant">
+              <%= render "shared/restaurant_main_card"%>
+            </div>
+        </div>
 
       </div>
 
   </div>
 </div>
+
+<!-- <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %> -->

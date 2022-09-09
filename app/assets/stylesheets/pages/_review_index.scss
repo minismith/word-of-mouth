@@ -1,6 +1,7 @@
 .feed-wrapper {
   display: flex;
   flex-direction: column;
+  width: 90%;
 }
 
 .review-intro {
@@ -10,4 +11,5 @@
 
 .feed-review {
   margin: 0 auto 10px auto;
+  width: 100%;
 }
