@@ -9,12 +9,12 @@
         <%= f.error_notification %>
 
       <div class="form-inputs">
-        <label class="col-sm-4 col-form-label">Avatar:
+        <h2><label class="col-sm-4 col-form-label">Avatar:
         <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
-        </label>
+        </label></h2>
         <div class="col-sm-8"><%= f.file_field :avatar, class: "form-control" %></div>
       </div>
-
+      <br>
         <h2><div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true, input_html: {class: "review-input-box"} %></h2>
 
