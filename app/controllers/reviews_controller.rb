@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @friends = current_user.friends
+    @reviews = Review.where(user: @friends).or(Review.where(user: current_user))
   end
 
   def new
