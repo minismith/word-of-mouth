@@ -91,8 +91,8 @@
   </div>
 </div>
 
-
-
-<% @restaurants.each do |restaurant| %>
-      <%= render "shared/restaurant_main_card", restaurant: restaurant %>
-<% end %>
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+        <%= render "shared/restaurant_main_card", restaurant: restaurant %>
+  <% end %>
+</div>
