@@ -21,8 +21,8 @@ class RestaurantsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
       }
     end
+    end
   end
-end
 
   def show
     @restaurant = Restaurant.find(params[:id])
