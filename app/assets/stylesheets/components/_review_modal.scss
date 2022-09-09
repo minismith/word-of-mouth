@@ -15,8 +15,8 @@ h3 {
 
 .modal {
   width: 80%;
-  margin: 50% 10%;
-
+  margin: 30% 10%;
+  // display: block !important;
 }
 
 .modal-footer {
@@ -57,4 +57,14 @@ h3 {
   margin-bottom: 0.4rem;
   font-weight: bolder;
   margin-top: 10px;
+}
+
+
+/* Important part */
+.modal-dialog{
+  overflow-y: initial !important
+}
+.modal-body{
+  height: 400px;
+  overflow-y: auto;
 }
