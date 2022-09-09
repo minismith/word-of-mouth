@@ -9,7 +9,11 @@
     </div>
   </div>
     <div class="review-content">
-      <p><%= review.content[0, 120]%>...</p>
+      <% if review.content.length < 120 %>
+        <%= review.content %>
+      <% else %>
+        <p><%= review.content[0, 120]%>...</p>
+      <% end %>
     </div>
     <%= render "shared/review_modal", review: review %>
 </div>
