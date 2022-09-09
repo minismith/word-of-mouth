@@ -2,6 +2,7 @@ class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :reviewers, through: :reviews, source: :user
+  has_many_attached :photos
 
   validates :name, presence: true
   validates :address, presence: true
@@ -17,6 +18,8 @@ class Restaurant < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
-  CUISINE = ["Italian", "Indian", "Turkish", "Chinese", "Japanese", "Middle eastern", "Greek", "Thai", "Korean",
+  @CUISINE = ["Italian", "Indian", "Turkish", "Chinese", "Japanese", "Middle eastern", "Greek", "Thai", "Korean",
              "American", "Argentinian", "Vietnamese", "North African", "Carribean", "Mexican"].sort
+
+  PRICE = ["£", "££","£££"]
 end

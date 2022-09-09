@@ -1,18 +1,19 @@
-<%= form_tag restaurants_path, method: :get, class:
-          "d-flex" do%>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control ", placeholder: "Find a restaurant" %>
-          <%= submit_tag "Search", class:"btn border" %>
-          <%# <%= submit_tag "Filter", class:"btn btn_filter" %>
+<div class="search-heading">
+  <%= form_tag restaurants_path, method: :get, class:
+            "d-flex" do%>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control ", placeholder: "Find a restaurant" %>
+            <%= submit_tag "Search", class:"btn border" %>
+            <%# <%= submit_tag "Filter", class:"btn btn_filter" %>
 
-<% end %>
+  <% end %>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn_filter" data-toggle="modal" data-target="#exampleModalCenter">
-  Filter
-</button>
-
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn_filter" data-toggle="modal" data-target="#exampleModalCenter">
+    Filter
+  </button>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -26,47 +27,51 @@
 
       <div class="modal-body">
       <h3>Location</h3>
-       <%= form_with url: restaurants_path, method: :get,  do |form|%>
-        <%=text_field_tag :query,
-        params[:query],
+       <%= form_tag  restaurants_path, method: :get do %>
+        <%=text_field_tag :query1,
+        params[:query1],
         class: "form-control",
         placeholder: "where would you like to go?"%>
 
         <br>
       <h3>Cuisine</h3>
-        <%= form.select :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
+        <%# <%= select_tag :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
+        <%= select_tag 'cuisine', options_for_select(['American','Italian', 'Indian', 'Carribean', 'Mexican'],'pick')%>
          <br>
          <br>
         <h3>Price</h3>
 
-         <%= form.check_box :price %>
-         <%= form.label :price, "£" %>
-         <%= form.check_box :price%>
-         <%= form.label :price, "££" %>
-         <%= form.check_box :price%>
-         <%= form.label :price, "£££" %>
+         <%= check_box_tag :price %>
+         <%= label_tag :price, "£" %>
+         <%= check_box_tag :price%>
+         <%= label_tag :price, "££" %>
+         <%= check_box_tag :price%>
+         <%= label_tag :price, "£££" %>
         <br>
         <br>
        <h3>Perfect For ...</h3>
 
-       <%= form.radio_button :perfect_for, "girls night" %>
-       <%= form.label :perfect_for, "girls night" %>
-       <%= form.radio_button :perfect_for,"lads night" %>
-       <%= form.label :perfect_for, "lads night" %>
-       <%= form.radio_button :perfect_for,"date night" %>
-       <%= form.label :perfect_for, "date night" %>
-       <%= form.radio_button :perfect_for,"fancy dinner" %>
-       <%= form.label :perfect_for, "fancy dinner" %>
-       <%= form.radio_button :perfect_for,"keep ti casual" %>
-       <%= form.label :perfect_for, "keep it casual" %>
-       <%= form.radio_button :perfect_for,"parents visit" %>
-       <%= form.label :perfect_for, "Parents visit" %>
-        <% end %>
+       <%= radio_button_tag :perfect_for, "girls night" %>
+       <%= label_tag :perfect_for, "girls night" %>
+       <%= radio_button_tag :perfect_for,"lads night" %>
+       <%= label_tag :perfect_for, "lads night" %>
+       <%= radio_button_tag :perfect_for,"date night" %>
+       <%= label_tag :perfect_for, "date night" %>
+       <%= radio_button_tag :perfect_for,"fancy dinner" %>
+       <%= label_tag :perfect_for, "fancy dinner" %>
+       <%= radio_button_tag :perfect_for,"keep ti casual" %>
+       <%= label_tag :perfect_for, "keep it casual" %>
+       <%= radio_button_tag :perfect_for,"parents visit" %>
+       <%= label_tag :perfect_for, "Parents visit" %>
+
+
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Search</button>
+        <%# <button type="button" class="btn btn-primary">Search</button> %>
+         <%= submit_tag ("Search"), class:"btn btn-primary" %>
+         <% end %>
       </div>
     </div>
   </div>
