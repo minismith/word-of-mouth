@@ -21,7 +21,7 @@
             <p><strong>Rating:  </strong><%= Review::EMOJIS.key(review.emoji) %></p>
           </div>
           <div class="review-modal-content">
-          <% if review.perfect_for.empty? %>
+          <% if review.perfect_for.empty? == false %>
             <p><strong>Perfect for...</strong></p>
                   <% review.perfect_for.delete_at(0) %>
                   <% review.perfect_for.each do |category| %>

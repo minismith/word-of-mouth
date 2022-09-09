@@ -24,8 +24,12 @@
     <h1 id="landing-header">Word of Mouth</h1>
     <p>A social network that celebrates our shared tastes.</p>
 
+  <% if !user_signed_in? %>
     <%= link_to "Log in", new_user_session_path, class: "btn landing-btn" %>
     <%= link_to "Sign up",  new_user_registration_path, class: "btn landing-btn" %>
+  <% else %>
+    <%= link_to "Enter", reviews_path, class: "btn landing-btn" %>
+  <% end %>
 
   </div>
 
