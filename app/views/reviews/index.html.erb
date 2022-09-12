@@ -8,6 +8,8 @@
     <div class="feed-review">
       <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
       <%= render "shared/review_card", review: review %>
+      <%= button_to 'Like', reviews_path(@review), method: :post %>
+      <p><%= @review.likes.count %> <%= (@review.likes.count) == 1 ? 'Like' : 'Likes'%></p>
     </div>
   <% end %>
 
