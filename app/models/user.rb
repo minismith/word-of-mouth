@@ -18,12 +18,14 @@ class User < ApplicationRecord
                     tsearch: { prefix: true }
                   }
 
-  def friends
+
+
+def friends
     friends_i_sent_invitation = Friendship.where(user_id: id, confirmed: true).pluck(:friend_id)
     friends_i_got_invitation = Friendship.where(friend_id: id, confirmed: true).pluck(:user_id)
     ids = friends_i_sent_invitation + friends_i_got_invitation
     User.where(id: ids)
-  end
+end
 
   def friend_with?(user)
     Friendship.confirmed_record?(id, user.id)
