@@ -11,6 +11,19 @@
   font-size: 17px;
 }
 
+.perfect-for-container {
+  border: solid 2px black;
+  padding: 10px;
+  border-radius: 10px;
+  // background-color: white;
+  width: 90%;
+  margin: 0 auto;
+
+    p {
+      margin-bottom: 0;
+    }
+}
+
 .name-and-review {
   margin-bottom: 10px;
 
@@ -55,7 +68,7 @@
 }
 
 .show-review {
-  margin: 0 auto 10px auto;
+  margin-bottom: 10px;
 }
 
 .opening-modal-body {
