@@ -3,7 +3,11 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header" >
-          <img src="https://kitt.lewagon.com/placeholder/users/arthur-littm" class="avatar-large">
+            <% if current_user.avatar.present? %>
+              <%= cl_image_tag current_user.avatar.key, class: "avatar-large", alt: "avatar-bordered" %>
+            <% else %>
+              <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzPb_pSj-ir-9eB6mi0lVJdQP1KKHiB8fRBS1CbmOXGd9Z1FEGMJHbEKhahwhWLGSaEXY&usqp=CAU", class: "avatar-large", alt: "avatar-bordered" %>
+            <% end %>
           <h5 class="modal-title" id="exampleModalLongTitle"><%= review.user.first_name.capitalize %>'s review</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
