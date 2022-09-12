@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     @friends = current_user.friends
-    @reviews = Review.where(user: @friends).or(Review.where(user: current_user))
+    @reviews = Review.where(user: @friends).or(Review.where(user: current_user)).order(created_at: :desc)
   end
 
   def new
