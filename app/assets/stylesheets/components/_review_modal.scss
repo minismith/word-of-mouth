@@ -16,6 +16,7 @@
 .modal {
   width: 80%;
   margin: 30% 10%;
+
   // display: block !important;
 }
 
@@ -67,4 +68,9 @@
 .modal-body{
   height: 400px;
   overflow-y: auto;
+}
+
+.modal-content {
+  border-radius: 10px !important;
+  border: 2px solid black;
 }
