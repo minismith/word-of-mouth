@@ -8,8 +8,6 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @restaurants = Restaurant.all
-    @restaurant = Restaurant.new
-    @cuisines = ['American', 'Italian', 'Indian', 'Chinese', 'French', 'Thai', 'Korean', 'Vietnamese', 'Ethiopian', 'Argentinian', 'North African', 'Bangladeshi', 'Sri Lankan', 'Malaysian', 'Caribbean', 'Mexican', 'Middle Eastern', 'Turkish', 'Japanese', 'Spanish','Greek']
   end
 
   def create

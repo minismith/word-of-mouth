@@ -6,9 +6,9 @@
   <%= simple_form_for [@review] do |f| %>
 
     <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants %></h2>
-    <p>Can't see it on the list? Add a new place: <i class="fa-solid fa-plus ms-2 btn btn-outline-dark" data-toggle="modal" data-target="#new-restaurant-modal"></i><p>
-
-    <%= render "shared/new_restaurant_modal" %>
+    <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
+            <i class="fa-solid fa-plus ms-2 btn btn-outline-dark"></i>
+          <% end %><p>
 
     <h2><%= f.input :title, input_html: {class: "review-input-box"}, label: "The topline" %></h2>
     <h2><%= f.input :emoji, as: :radio_buttons, label: "Pick an emoji", collection_wrapper_tag: 'div',

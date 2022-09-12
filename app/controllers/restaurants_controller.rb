@@ -32,7 +32,6 @@ class RestaurantsController < ApplicationController
         }
       end
     end
-
   end
 
   def show
@@ -47,7 +46,7 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-
+    @cuisines = ['American', 'Italian', 'Indian', 'Chinese', 'French', 'Thai', 'Korean', 'Vietnamese', 'Ethiopian', 'Argentinian', 'North African', 'Bangladeshi', 'Sri Lankan', 'Malaysian', 'Caribbean', 'Mexican', 'Middle Eastern', 'Turkish', 'Japanese', 'Spanish','Greek'].sort
   end
 
   def create
@@ -62,6 +61,6 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-
+    params.require(:restaurant).permit(:name, :address, :cuisine, :price)
   end
 end
