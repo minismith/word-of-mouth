@@ -1,7 +1,13 @@
 <div class="review-card" data-toggle="modal" data-target="#review-modal<%= review.id %>">
   <div class="review-top-row">
+    <div class="review-avatar">
+        <% if current_user.avatar.present? %>
+          <%= cl_image_tag current_user.avatar.key, class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% else %>
+          <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzPb_pSj-ir-9eB6mi0lVJdQP1KKHiB8fRBS1CbmOXGd9Z1FEGMJHbEKhahwhWLGSaEXY&usqp=CAU", class: "avatar-bordered", alt: "avatar-bordered" %>
+        <% end %>
+    </div>
     <div class="avatar-title">
-        <i class="fa-regular fa-face-smile me-3 "></i>
         <h2><%= review.title %></h2>
     </div>
    <div class="review-emoji">
@@ -9,10 +15,10 @@
     </div>
   </div>
     <div class="review-content">
-      <% if review.content.length < 120 %>
+      <% if review.content.length < 85 %>
          <p class="text-left-card"><%= review.content %></p>
       <% else %>
-        <p class="text-left-card"><%= review.content[0, 120]%>...</p>
+        <p class="text-left-card"><%= review.content[0, 85]%>...</p>
       <% end %>
     </div>
     <%= render "shared/review_modal", review: review %>
