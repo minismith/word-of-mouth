@@ -2,7 +2,11 @@
   <div class="notification">
 
     <div class="notification-content">
-      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+      <% if friend.avatar.present? %>
+            <%= cl_image_tag friend.avatar.key, class: "avatar-bordered-banner", alt: "avatar-bordered" %>
+      <% else %>
+        <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzPb_pSj-ir-9eB6mi0lVJdQP1KKHiB8fRBS1CbmOXGd9Z1FEGMJHbEKhahwhWLGSaEXY&usqp=CAU", class: "avatar-bordered", alt: "avatar-bordered" %>
+      <% end %>
       <p><%= friend.first_name%> <%=friend.last_name %> </p>
     </div>
 
