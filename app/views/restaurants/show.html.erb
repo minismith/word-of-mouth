@@ -27,7 +27,7 @@
         <%= link_to icon('fa-regular', 'clock'), "#openingHoursModal", { class: "restaurant-link", 'data-toggle': "modal", 'data-target': "#openingHoursModal" } %>
         <%= link_to icon('fa-solid', 'earth-europe'), @restaurant.website, class: "restaurant-link" %>
 
-        <%= render "shared/opening_hours", opening_hours: @restaurant.opening_hours %>
+        <%= render "shared/opening_hours" %>
 
       </div>
     </div>
