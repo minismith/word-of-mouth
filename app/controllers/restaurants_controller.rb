@@ -60,13 +60,15 @@ class RestaurantsController < ApplicationController
     restaurant_basics = JSON.parse(restaurant_serialized)
     place_id = restaurant_basics["candidates"][0]["place_id"]
 
-    details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=#{key}")
+    details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cgeometry/location%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=#{key}")
     details_serialized = URI.open(details_url).read
     restaurant_details = JSON.parse(details_serialized)
     @restaurant.name = restaurant_details["result"]["name"]
     @restaurant.address = restaurant_details["result"]["formatted_address"]
     @restaurant.website = restaurant_details["result"]["website"]
     @restaurant.opening_hours = restaurant_details["result"]["opening_hours"]["weekday_text"]
+    @restaurant.latitude = restaurant_details["result"]["geometry"]["location"]["lat"]
+    @restaurant.longitude = restaurant_details["result"]["geometry"]["location"]["lng"]
 
     if restaurant_details["result"]["price_level"] == 1
       @restaurant.price = "£"
