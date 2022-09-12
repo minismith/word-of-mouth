@@ -7,7 +7,7 @@
 
     <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants %></h2>
     <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
-            <i class="fa-solid fa-plus ms-2 btn btn-outline-dark"></i>
+            <i class="fa-solid fa-plus ms-2 btn link-to-new-restaurant"></i>
           <% end %><p>
 
     <h2><%= f.input :title, input_html: {class: "review-input-box"}, label: "The topline" %></h2>
