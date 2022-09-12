@@ -39,9 +39,9 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
- <div class="perfect-for-container mb-3">
+ <div class="perfect-for-container text-center mb-2">
     <p><strong>Perfect for:</strong> <% @reviews.each do |review| %>
-        <%= review.perfect_for.drop(1).join(" ") %>
+        <%= review.perfect_for.drop(1).join(" ")%>
       <% end %>
     </p>
   </div>
