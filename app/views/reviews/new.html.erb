@@ -22,6 +22,8 @@
     <h2><%= f.input :perfect_for, as: :check_boxes, label: "Perfect for...", input_html: { class: "perfect-for-selector" },
                   item_wrapper_class: 'perfect-for-item', collection: Review::PERFECT_FOR %></h2>
 
+    <h2><%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Pics or it didn't happen" %></h2>
+
 
 
     <div class="submit-review">  <%= f.button :submit, class: 'btn submit-review-btn', value: "Add review" %> </div>

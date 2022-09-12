@@ -17,17 +17,25 @@
         <label for="friends"><h3>Friends</h3></label>
         <div class="tab">
 
-        <% if @user == current_user %>
-          <h3> Your friends: </h3>
-
-          <%= form_tag user_path, method: :get, class: "d-flex" do %>
+       <%= form_tag user_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control form-friend",
               placeholder: "Looking for someone ?"
             %>
             <%= submit_tag "Search", class: "btn btn-friend-search" %>
-          <% end %>
+
+             <%# <% if @user.valid? %>
+              <%# <%= redirect_to user_path %>
+             <%# <% else %>
+              <%# <h4>User doesn't exist</h4>
+            <% end %>
+        <% end %>
+
+        <% if @user == current_user %>
+          <h3> Your friends: </h3>
+
+
 
         <% else %>
           <h3> <%= @user.first_name%>'s friends: </h3>
@@ -64,15 +72,16 @@
           </div>
 
           <% @reviews.each do |review| %>
-
               <%= render "shared/review_card", review: review %>
-
           <% end %>
 
-           <div class="btn btn-learn-more">
+          <div class="btn btn-learn-more">
               <%= link_to "Edit profile", edit_user_registration_path %>
           </div>
         </div>
+
+
+
 
         <input type="radio" name="mytabs" id="wishlist">
         <label for="wishlist"><h3>Wishlist</h3></label>
