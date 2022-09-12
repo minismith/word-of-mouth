@@ -83,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_115706) do
     t.float "longitude"
     t.text "opening_hours", default: [], array: true
     t.string "website"
+
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -91,7 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_115706) do
     t.string "emoji"
     t.text "content"
     t.string "title"
-    t.string "perfect_for"
+    t.text "perfect_for"
     t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -24,6 +24,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:restaurant_id, :title, :content, :emoji, perfect_for: [])
+    params.require(:review).permit(:restaurant_id, :title, :content, :emoji, perfect_for: [], photos: [])
   end
 end
