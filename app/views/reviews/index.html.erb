@@ -4,7 +4,7 @@
   <h1>Your feed</h1>
 </div>
 
-  <% @reviews.reverse_each do |review| %>
+  <% @reviews.each do |review| %>
     <div class="feed-review">
       <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
       <%= render "shared/review_card", review: review %>
