@@ -1,4 +1,4 @@
-<div class="search-heading">
+<div class="search-heading d-flex ">
   <%= form_tag restaurants_path, method: :get, class:
             "d-flex" do%>
             <%= text_field_tag :query,
@@ -36,7 +36,7 @@
         <br>
       <h3>Cuisine</h3>
         <%# <%= select_tag :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
-        <%= select_tag 'cuisine', options_for_select(['American','Italian', 'Indian', 'Carribean', 'Mexican', 'Middle eastern', 'Turkish', 'Japanese', 'Spanish','Greek'],'pick')%>
+        <%= select_tag 'cuisine', options_for_select(['American','Italian', 'Indian', 'Carribean', 'Mexican', 'Middle eastern', 'Turkish', 'Japanese', 'Spanish','Greek'])%>
          <br>
          <br>
         <h3>Price</h3>
