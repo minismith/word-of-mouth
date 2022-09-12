@@ -1,6 +1,8 @@
 <div class="banner">
   <div class="container pb-5">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+   <% if current_user.avatar.present? %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar-bordered", alt: "avatar-bordered" %>
+    <% end %>
 
     <h2><%= @user.first_name%> <%=@user.last_name %>
       <% if @user != current_user && Friendship.reacted?(@user.id, current_user.id) == false %>

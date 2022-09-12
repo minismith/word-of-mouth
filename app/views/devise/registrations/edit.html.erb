@@ -1,46 +1,54 @@
-<div class="container">
-  <div class="user-scroll">
-    <div class="review-title">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
-      <a><%= current_user.avatar.key %></a>
-    </div>
+<div class="container pb-5">
 
-    <div>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= f.error_notification %>
-        <h2><div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true, input_html: {class: "review-input-box"} %></h2>
+  <div id="edit-title"><h2>Edit <%= resource_name.to_s.humanize %></h2></div>
+  <div id="edit-profile">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-          <% end %>
-          <h2><%= f.input :first_name,
+      <div class="form-inputs">
+        <label class="col-sm-4 col-form-label">Avatar:
+        <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
+        </label>
+        <div class="col-sm-8"><%= f.file_field :avatar, class: "form-control" %></div>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <%= f.input :first_name,
                     required: false,
-                    input_html: { autocomplete: "new-password", class: "review-input-box" } %></h2>
-          <h2><%= f.input :last_name,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :last_name,
                     required: false,
-                    input_html: { autocomplete: "new-password", class: "review-input-box" } %></h2>
-          <h2><%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "new-password", class: "review-input-box" } %></h2>
-          <h2><%= f.input :password_confirmation,
-                      required: false,
-                      input_html: { autocomplete: "new-password", class: "review-input-box" } %></h2>
-          <h2><%= f.input :current_password,
-                      required: true,
-                      input_html: { autocomplete: "current-password", class: "review-input-box" } %></h2>
-          <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
-              <%= f.input :photo, as: :file %>
-        </div>
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Update", class: "btn-learn-more" %>
-        </div>
-      <% end %>
-    </div>
 
-    <div class="back-link ">
-      <%= link_to "Back", :back %>
-    </div>
+        <%= f.button :submit, "Update", class:"form-actions" %>
+
+    <% end %>
   </div>
+
+  <div class="cancel-account">
+    <!--<h4>Cancel my account</h4>-->
+    <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
+  <!--<div class="btn btn-ghost back">
+    <%= link_to "Back", user_path(current_user) %>
+  </div>-->
 </div>
