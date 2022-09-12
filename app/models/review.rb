@@ -4,6 +4,7 @@ class Review < ApplicationRecord
   has_many :comments, dependent: :destroy
   serialize :perfect_for, Array
 
+  # acts_as_favoritable
 
   validates :title, presence: true
   validates :content, presence: true

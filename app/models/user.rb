@@ -17,6 +17,7 @@ class User < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
+  # acts_as_favoritor
 
   def friends
     friends_i_sent_invitation = Friendship.where(user_id: id, confirmed: true).pluck(:friend_id)
@@ -32,4 +33,13 @@ class User < ApplicationRecord
   def send_invitation(user)
     friendships.create(friend_id: user.id)
   end
+
+  # def user.favorite(review)
+  # end
+
+  # def user.unfavorite(review)
+  # end
+
+  # def user.favorited?
+  # end
 end
