@@ -64,15 +64,16 @@
           </div>
 
           <% @reviews.each do |review| %>
-
               <%= render "shared/review_card", review: review %>
-
           <% end %>
-
-           <div class="btn btn-learn-more">
+          </div>
+          <div class="btn btn-learn-more">
               <%= link_to "Edit profile", edit_user_registration_path %>
           </div>
         </div>
+
+
+
 
         <input type="radio" name="mytabs" id="wishlist">
         <label for="wishlist"><h3>Wishlist</h3></label>
