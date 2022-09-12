@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 require "faker"
+
 Review.delete_all
 Restaurant.delete_all
 User.delete_all

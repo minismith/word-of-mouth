@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :pending_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: "friend_id"
   has_many :bookmarks, dependent: :destroy
   has_many :reviews, dependent: :destroy
