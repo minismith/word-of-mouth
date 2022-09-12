@@ -7,8 +7,14 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 require "faker"
-Restaurant.delete_all
-User.delete_all
+puts "deleting friendships"
+Friendship.destroy_all
+puts "deleting reviews"
+Review.destroy_all
+puts "deleting restaurants"
+Restaurant.destroy_all
+puts "deleting users"
+User.destroy_all
 
 # // RESTAURANTS //
 

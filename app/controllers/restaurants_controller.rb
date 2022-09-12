@@ -1,5 +1,4 @@
 class RestaurantsController < ApplicationController
-
   def index
     if params[:query].present?
       @restaurants = Restaurant.search_by_name_and_address(params[:query])
@@ -44,5 +43,25 @@ class RestaurantsController < ApplicationController
       lng: @restaurant.longitude,
       info_window: render_to_string(partial: "info_window", locals: {restaurant: @restaurant})
     }]
+  end
+
+  def new
+    @restaurant = Restaurant.new
+
+  end
+
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      redirect_to new_review_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def restaurant_params
+
   end
 end

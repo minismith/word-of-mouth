@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-  has_many :reviewers, through: :reviews, source: :user
+  has_many :reviewers, through: :reviews, source: :user, dependent: :destroy
   has_many_attached :photos
 
   validates :name, presence: true
