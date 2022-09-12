@@ -28,8 +28,14 @@
 
 .avatar-title {
   display: flex;
+  align-self: center;
+  padding-right: 100px;
 }
 
 .review-content {
   margin-top: 8px;
+}
+
+.review-emoji p {
+  font-size: 20px;
 }

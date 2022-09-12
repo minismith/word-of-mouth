@@ -3,6 +3,7 @@ class Review < ApplicationRecord
   belongs_to :restaurant
   has_many :comments, dependent: :destroy
   serialize :perfect_for, Array
+  has_many_attached :photos
 
   # acts_as_favoritable
 

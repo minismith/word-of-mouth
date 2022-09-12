@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_09_12_132044) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_115706) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -99,8 +103,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_132044) do
     t.string "photo", default: "https://res.cloudinary.com/dg6mudunt/image/upload/v1662977333/ali-inay-y3aP9oo9Pjc-unsplash_g7gvan.jpg"
     t.float "latitude"
     t.float "longitude"
+    t.text "opening_hours", default: [], array: true
     t.string "website"
-    t.text "opening_hours"
+
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -109,7 +114,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_132044) do
     t.string "emoji"
     t.text "content"
     t.string "title"
-    t.string "perfect_for"
+    t.text "perfect_for"
     t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

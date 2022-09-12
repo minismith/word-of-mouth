@@ -9,28 +9,28 @@
       <%= link_to "Review it", new_review_path, class: "btn btn-outline-dark green-btn px-4" %>
     </div>
 
-    <div class="restaurant-details d-flex justify-content-between">
-      <div class="main-details">
-        <p><%= @restaurant.cuisine %> |
-          <% if @restaurant.price == "£" %>
-            <strong><%= @restaurant.price %></strong>££
-          <% elsif @restaurant.price == "££" %>
-            <strong><%= @restaurant.price %></strong>£
-          <% else %>
-            <strong><%= @restaurant.price %></strong>
-          <% end %>
-        </p>
-        <p><i class="fa-solid fa-location-dot"></i> <%= @restaurant.address %></p>
-      </div>
+    <div class="restaurant-details">
+      <div class="d-flex justify-content-between">
+        <div class="main-details">
+          <p><%= @restaurant.cuisine %> |
+            <% if @restaurant.price == "£" %>
+              <strong><%= @restaurant.price %></strong>££
+            <% elsif @restaurant.price == "££" %>
+              <strong><%= @restaurant.price %></strong>£
+            <% else %>
+              <strong><%= @restaurant.price %></strong>
+            <% end %>
+          </p>
+          <p><i class="fa-solid fa-location-dot"></i> <%= @restaurant.address %></p>
+        </div>
 
-      <div class="d-flex">
-        <%= link_to icon('fa-regular', 'clock'), restaurants_path, class: "restaurant-link" %>
-        <%= link_to icon('fa-solid', 'earth-europe'), @restaurant.website, class: "restaurant-link" %>
-
-
+        <div class="d-flex">
+          <%= link_to icon('fa-regular', 'clock'), "#openingHoursModal", { class: "restaurant-link", 'data-toggle': "modal", 'data-target': "#openingHoursModal" } %>
+          <%= link_to icon('fa-solid', 'earth-europe'), @restaurant.website, class: "restaurant-link" %>
+          <%= render "shared/opening_hours" %>
+        </div>
       </div>
     </div>
-
   </div>
 
   <div class="container restaurant-map mt-1 mb-3"
@@ -38,7 +38,6 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 
   <div class="container restaurant-reviews">
 
