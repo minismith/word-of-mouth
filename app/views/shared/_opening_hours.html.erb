@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="modal fade" id="openingHoursModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" >
+            <h2>Opening hours</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body opening-modal-body">
+
+          <% @restaurant.opening_hours.as_json.each do |period| %>
+              <p><%= period.tr('[', '').tr(']', '').tr('"', '') %><p>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
