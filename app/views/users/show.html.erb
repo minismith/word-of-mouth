@@ -1,7 +1,9 @@
 <div class="banner">
   <div class="container pb-5">
-   <% if current_user.avatar.present? %>
+    <% if current_user.avatar.present? %>
             <%= cl_image_tag current_user.avatar.key, class: "avatar-bordered", alt: "avatar-bordered" %>
+    <% else %>
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzPb_pSj-ir-9eB6mi0lVJdQP1KKHiB8fRBS1CbmOXGd9Z1FEGMJHbEKhahwhWLGSaEXY&usqp=CAU", class: "avatar-bordered", alt: "avatar-bordered" %>
     <% end %>
 
     <h2><%= @user.first_name%> <%=@user.last_name %>
