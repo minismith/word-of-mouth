@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
 
 
-    @reviews = Review.where(user: @user)
+    @reviews = Review.where(user: @user).order(created_at: :desc)
     @restaurants = Restaurant.where(reviews: @reviews)
 
     @markers = @restaurants.geocoded.map do |restaurant|
