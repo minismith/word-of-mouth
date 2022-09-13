@@ -5,7 +5,7 @@
   <div id="review_form">
   <%= simple_form_for [@review] do |f| %>
 
-    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants %></h2>
+    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants.sort_by{ |restaurant| restaurant.name.downcase } %></h2>
     <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
             <i class="fa-solid fa-plus ms-2 btn link-to-new-restaurant"></i>
           <% end %><p>
