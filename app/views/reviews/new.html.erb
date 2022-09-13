@@ -2,7 +2,7 @@
   <div class="review-title">
     <h1>How was it?</h1>
   </div>
-  <div id="review_form">
+  <div id="review_form" data-controller="autocomplete">
   <%= simple_form_for [@review] do |f| %>
 
     <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants.sort_by{ |restaurant| restaurant.name.downcase } %></h2>
@@ -25,7 +25,10 @@
     <h2><%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Pics or it didn't happen" %></h2>
 
 
+    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down", data: { autocomplete_target: "selectsafd2", action: "change->autocomplete#update" }}, label: "Where?", collection: @restaurants.map { |r| [r.name, r.id] } %></h2>
 
+
+    <%= select_tag "Test", options_from_collection_for_select( @restaurants, :name, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2"%>
     <div class="submit-review">  <%= f.button :submit, class: 'btn submit-review-btn', value: "Add review" %> </div>
     </div>
   <% end %>
