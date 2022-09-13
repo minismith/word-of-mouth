@@ -6,7 +6,7 @@
   <%= simple_form_for [@review] do |f| %>
 
      <h2> <label class="form-label text required" for="review_restaurant_id">Where? <abbr title="required">*</abbr></label></h2>
-    <%= select_tag(:restaurant_id, options_from_collection_for_select( @restaurants, :id, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2 review-input-box", name: "review[restaurant_id]", id: "review_restaurant_id") %>
+    <%= select_tag(:restaurant_id, options_from_collection_for_select( @restaurants.sort_by {|r| r.name }, :id, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2 review-input-box", name: "review[restaurant_id]", id: "review_restaurant_id") %>
 
     <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
             <i class="fa-solid fa-plus ms-2 btn link-to-new-restaurant"></i>
