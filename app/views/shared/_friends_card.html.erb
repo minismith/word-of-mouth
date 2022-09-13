@@ -14,8 +14,8 @@
 
     <% @friendship = Friendship.find(Friendship.find_invitation(@user.id, friend.id)) %>
 
-    <%= link_to icon('fa-solid', 'comment'), chatroom_path(@friendship.id), class: "me-3" %>
       <% if @user == current_user %>
+          <%= link_to icon('fa-solid', 'comment'), chatroom_path(@friendship.id), class: "me-3" %>
           <%= link_to icon('fa-solid', 'user-minus'),
           friendships_destroy_path(friendship_id: Friendship.find_invitation(@user.id, friend.id)) %>
       <% end %>
