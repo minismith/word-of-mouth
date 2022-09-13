@@ -5,7 +5,9 @@
   <div id="review_form" data-controller="autocomplete">
   <%= simple_form_for [@review] do |f| %>
 
-    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down" }, label: "Where?", collection: @restaurants.sort_by{ |restaurant| restaurant.name.downcase } %></h2>
+     <h2> <label class="form-label text required" for="review_restaurant_id">Where? <abbr title="required">*</abbr></label></h2>
+    <%= select_tag(:restaurant_id, options_from_collection_for_select( @restaurants, :id, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2 review-input-box", name: "review[restaurant_id]", id: "review_restaurant_id") %>
+
     <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
             <i class="fa-solid fa-plus ms-2 btn link-to-new-restaurant"></i>
           <% end %><p>
@@ -22,16 +24,15 @@
     <h2><%= f.input :perfect_for, as: :check_boxes, label: "Perfect for...", input_html: { class: "perfect-for-selector" },
                   item_wrapper_class: 'perfect-for-item', collection: Review::PERFECT_FOR %></h2>
 
-    <h2><%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Pics or it didn't happen" %></h2>
+    <h2><%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Pics or it didn't happen", selected: "selected" %></h2>
 
 
-    <h2><%= f.input :restaurant_id, input_html: {class: "review-input-box review-drop-down", data: { autocomplete_target: "selectsafd2", action: "change->autocomplete#update" }}, label: "Where?", collection: @restaurants.map { |r| [r.name, r.id] } %></h2>
 
-
-    <%= select_tag "Test", options_from_collection_for_select( @restaurants, :name, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2"%>
     <div class="submit-review">  <%= f.button :submit, class: 'btn submit-review-btn', value: "Add review" %> </div>
     </div>
+
   <% end %>
+
   </div>
 
 
