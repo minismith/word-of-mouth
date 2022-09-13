@@ -9,7 +9,7 @@
             </button>
         </div>
         <div class="modal-body opening-modal-body">
-
+<% raise %>
           <% @restaurant.opening_hours.as_json.each do |period| %>
               <p><%= period.tr('[', '').tr(']', '').tr('"', '') %><p>
           <% end %>
