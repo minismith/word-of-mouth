@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_09_12_162531) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_111440) do
+>>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162531) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "friendship_id"
+    t.index ["friendship_id"], name: "index_chatrooms_on_friendship_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -124,8 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162531) do
     t.string "photo", default: "https://res.cloudinary.com/dg6mudunt/image/upload/v1662977333/ali-inay-y3aP9oo9Pjc-unsplash_g7gvan.jpg"
     t.float "latitude"
     t.float "longitude"
-    t.string "website"
     t.text "opening_hours", default: [], array: true
+    t.string "website"
   end
 
   create_table "reviews", force: :cascade do |t|

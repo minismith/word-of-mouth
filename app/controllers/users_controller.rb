@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-
     @reviews = Review.where(user: @user).order(created_at: :desc)
     @restaurants = Restaurant.where(reviews: @reviews)
 
