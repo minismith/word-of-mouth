@@ -9,11 +9,19 @@
       <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
       <%= render "shared/review_card", review: review %>
       <div class="d-flex">
-      <%= button_to 'Like', reviews_path(@review), method: :post, class: "like-btn"%>
+      <%# <%= button_to 'Like', review_likes_path(:review_id), method: :post, class: "like-btn"%>
+
+      <% pre_like = review.likes.find { |like| like.user_id == current_user.id} %>
+         <% if pre_like %>
+          <%= link_to 'Unlike', like_path(pre_like), data: { "turbo-method": :delete } , class: "unlike-btn" %>
+        <% else %>
+          <%= button_to 'Like', review_likes_path(review), method: :post%>
+        <% end %>
       <p>
-        <%= @reviews.count %>
-        <%= (@reviews.count) == 0 ? 'Like' : 'Likes'%>
+        <%= review.likes.count %>
+        <%= (review.likes.count) == 1 ? 'Like' : 'Likes'%>
       </p>
+
       </div>
     </div>
   <% end %>
