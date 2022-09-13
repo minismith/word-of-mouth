@@ -13,9 +13,13 @@
 
       <% pre_like = review.likes.find { |like| like.user_id == current_user.id} %>
          <% if pre_like %>
-          <%= link_to 'Unlike', like_path(pre_like), data: { "turbo-method": :delete } , class: "unlike-btn" %>
+          <%= link_to like_path(pre_like), data: { "turbo-method": :delete }  , class: "unlike-btn" do %>
+            <i class="fa-solid fa-thumbs-up red-thumb"></i>
+          <% end %>
         <% else %>
-          <%= button_to 'Like', review_likes_path(review), method: :post%>
+          <%= link_to review_likes_path(review), data: { "turbo-method": :post}, class: "like-btn" do%>
+            <i class="fa-regular fa-thumbs-up"></i>
+          <% end %>
         <% end %>
       <p>
         <%= review.likes.count %>
