@@ -83,10 +83,16 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
 
-        <% @reviews.each do |review| %>
-            <p class="review-intro profile-review"><strong><%= @user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
-            <%= render "shared/review_card", review: review %>
-        <% end %>
+          <% if @user != current_user && Friendship.reacted?(@user.id, current_user.id) == true %>
+            <% @reviews.each do |review| %>
+                <p class="review-intro profile-review"><strong><%= @user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
+                <%= render "shared/review_card", review: review %>
+            <% end %>
+          <% else %>
+            <%= render "shared/flashes" %>
+          <% end %>
+
+
       </div>
 
 
