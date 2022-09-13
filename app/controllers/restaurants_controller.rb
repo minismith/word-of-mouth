@@ -55,7 +55,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     key = ENV['GOOGLE_MAPS_API_KEY']
-    id_url = URI("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=#{@restaurant.name}&inputtype=textquery&fields=place_id&key=#{key}")
+    id_url = URI("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=#{@restaurant.name}&inputtype=textquery&locationbias=ipbias&fields=place_id&key=#{key}")
     restaurant_serialized = URI.open(id_url).read
     restaurant_basics = JSON.parse(restaurant_serialized)
     place_id = restaurant_basics["candidates"][0]["place_id"]
