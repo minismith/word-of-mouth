@@ -6,10 +6,10 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <h2><label class="col-sm-4 col-form-label">Avatar:
-        <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
-        </label></h2>
-        <div class="col-sm-8"><%= f.file_field :avatar, class: "form-control" %></div>
+        <h2><label class="col-sm-4 col-form-label">Avatar:</label></h2>
+        <div class="col-sm-8">
+          <%= f.file_field :avatar, class: "form-control" %>
+        </div>
       </div>
       <br>
       <div class="form-inputs">
