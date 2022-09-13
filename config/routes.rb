@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[new create]
   end
   resources :reviews
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   resources :users, only: [:show] do
     # resources :bookmarks, only: %i[new create index delete]
     resources :friendships

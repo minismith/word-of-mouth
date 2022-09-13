@@ -125,7 +125,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161816) do
     t.string "emoji"
     t.text "content"
     t.string "title"
-    t.string "perfect_for"
+    t.text "perfect_for"
     t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
