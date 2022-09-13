@@ -4,6 +4,8 @@ class FriendshipsController < ApplicationController
     id2 = params[:ids][:id2]
     @friendship = Friendship.new(user_id: id1, friend_id: id2)
     @friendship.save
+    @chatroom = Chatroom.new(friendship_id: @friendship.id)
+    @chatroom.save!
     redirect_to user_path(User.find(id2))
   end
 
