@@ -44,6 +44,7 @@
 
 .review-modal-content {
   padding: 8px;
+  text-align: left;
 }
 
 .perfect-for-modal-list {
@@ -73,4 +74,11 @@
 .modal-content {
   border-radius: 10px !important;
   border: 2px solid black;
+}
+
+.carousel-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10%;
 }
