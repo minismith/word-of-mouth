@@ -66,12 +66,14 @@
         <label for="reviews"><h3>Reviews</h3></label>
         <div class="tab">
           <div style="width: 100%; height: 225px;"
+            class="profile-map"
             data-controller="map"
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
 
           <% @reviews.each do |review| %>
+              <p class="review-intro profile-review"><strong><%= @user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
               <%= render "shared/review_card", review: review %>
           <% end %>
 
