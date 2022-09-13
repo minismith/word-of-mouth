@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @bookmark.restaurant = @restaurant
     @bookmark.user = current_user
@@ -24,6 +24,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark)
+    params.permit(:restaurant_id)
   end
 end
