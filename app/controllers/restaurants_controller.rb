@@ -9,7 +9,8 @@ class RestaurantsController < ApplicationController
         {
           lat: restaurant.latitude,
           lng: restaurant.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
+          image_url: helpers.asset_url("marker.png")
         }
       end
 
@@ -21,7 +22,8 @@ class RestaurantsController < ApplicationController
        {
          lat: restaurant.latitude,
          lng: restaurant.longitude,
-         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
+         image_url: helpers.asset_url("marker.png")
        }
      end
 
@@ -31,7 +33,9 @@ class RestaurantsController < ApplicationController
         {
           lat: restaurant.latitude,
           lng: restaurant.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
+          image_url: helpers.asset_url("marker.png")
+
         }
       end
     end
