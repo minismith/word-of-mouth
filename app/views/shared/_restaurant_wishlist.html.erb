@@ -1,11 +1,10 @@
 <div class="restaurant-main-card">
-    <% @restaurants.each do |restaurant|%>
+    <% @bookmarks.each do |bookmark|%>
+    <% restaurant = Restaurant.find(bookmark.restaurant_id) %>
       <%= link_to restaurant_path(restaurant) do %>
       <div class="restaurant-card">
         <div class="restaurant-card-image">
         <!-- Add cloudinary image here -->
-
-
 
           <%= image_tag(restaurant.photo, width: 400, height: 210, crop: :fill) %>
 
