@@ -60,7 +60,7 @@ class RestaurantsController < ApplicationController
     restaurant_basics = JSON.parse(restaurant_serialized)
     place_id = restaurant_basics["candidates"][0]["place_id"]
 
-    details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cgeometry/location%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=#{key}")
+    details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cgeometry/location%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=AIzaSyBUm0Tlt9t8A5HxGpzrYqr48YXDk6T44v4")
     details_serialized = URI.open(details_url).read
     restaurant_details = JSON.parse(details_serialized)
     @restaurant.name = restaurant_details["result"]["name"]
