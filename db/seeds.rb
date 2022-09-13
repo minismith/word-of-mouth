@@ -10,6 +10,7 @@ require "faker"
 
 Review.delete_all
 Restaurant.delete_all
+Friendship.delete_all
 User.delete_all
 
 # // RESTAURANTS //
