@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'friendships/update'
   get 'friendships/create'
   get 'friendships/destroy'
+  resources :restaurants, only: %i[index show new create] do
+    resources :bookmarks, only: %i[new create]
+  end
   resources :restaurants, only: %i[index show new create]
 
   resources :reviews do
@@ -21,4 +24,5 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %i[new create index destroy]
     resources :friendships
   end
+  resources :bookmarks, only: %i[destroy]
 end
