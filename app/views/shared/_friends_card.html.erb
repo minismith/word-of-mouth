@@ -11,7 +11,7 @@
     </div>
 
     <div class="friend-action-icons">
-    <%= link_to icon('fa-solid', 'comment') %>
+    <%= link_to icon('fa-solid', 'comment'), chatroom_path(1), class: "me-3" %>
       <% if @user == current_user %>
           <%= link_to icon('fa-solid', 'user-minus'),
           friendships_destroy_path(friendship_id: Friendship.find_invitation(@user.id, friend.id)) %>
