@@ -4,8 +4,9 @@ class Review < ApplicationRecord
   has_many :comments, dependent: :destroy
   serialize :perfect_for, Array
   has_many_attached :photos
+  has_many :likes, dependent: :destroy
 
-  # acts_as_favoritable
+
 
   validates :title, presence: true
   validates :content, presence: true

@@ -8,6 +8,25 @@
     <div class="feed-review">
       <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
       <%= render "shared/review_card", review: review %>
+      <div class="d-flex">
+      <%# <%= button_to 'Like', review_likes_path(:review_id), method: :post, class: "like-btn"%>
+
+      <% pre_like = review.likes.find { |like| like.user_id == current_user.id} %>
+         <% if pre_like %>
+          <%= link_to like_path(pre_like), data: { "turbo-method": :delete }  , class: "unlike-btn" do %>
+            <i class="fa-solid fa-thumbs-up red-thumb"></i>
+          <% end %>
+        <% else %>
+          <%= link_to review_likes_path(review), data: { "turbo-method": :post}, class: "like-btn" do%>
+            <i class="fa-regular fa-thumbs-up"></i>
+          <% end %>
+        <% end %>
+      <p>
+        <%= review.likes.count %>
+        <%= (review.likes.count) == 1 ? 'Like' : 'Likes'%>
+      </p>
+
+      </div>
     </div>
   <% end %>
 
