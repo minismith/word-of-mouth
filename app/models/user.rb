@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_and_belongs_to_many :chatrooms, dependent: :destroy
   has_one_attached :avatar
 
   validates :first_name, presence: true
