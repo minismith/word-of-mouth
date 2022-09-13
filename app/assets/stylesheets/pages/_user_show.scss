@@ -26,6 +26,32 @@
   margin-left: 10px;
 }
 
+.edit-profile-btn {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+#edit-profile-icon {
+  margin-left: auto;
+  width: 20px;
+  padding-top: 10px;
+  padding-right: 30px;
+}
+
+// .profile-avatar {
+//   align-self: center;
+// }
+
+.profile-icons {
+  display: flex;
+  justify-content: center;
+  width: 55%;
+  margin-left: auto;
+}
+
+
 .user-show-map {
   height: 230px;
   width: 90%;
@@ -124,4 +150,12 @@
 
 .profile-map {
   margin-bottom: 15px;
+}
+
+.fa-pen:before {
+  content: "\f304";
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
 }
