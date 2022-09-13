@@ -9,7 +9,8 @@ class RestaurantsController < ApplicationController
         {
           lat: restaurant.latitude,
           lng: restaurant.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
+          image_url: helpers.asset_url("marker.png")
         }
       end
 
@@ -21,7 +22,8 @@ class RestaurantsController < ApplicationController
        {
          lat: restaurant.latitude,
          lng: restaurant.longitude,
-         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+         info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
+         image_url: helpers.asset_url("marker.png")
        }
      end
 
@@ -31,7 +33,9 @@ class RestaurantsController < ApplicationController
         {
           lat: restaurant.latitude,
           lng: restaurant.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant})
+          info_window: render_to_string(partial: "info_window", locals: {restaurant: restaurant}),
+          image_url: helpers.asset_url("marker.png")
+
         }
       end
     end
@@ -54,13 +58,13 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    key = ENV['GOOGLE_MAPS_API_KEY']
-    id_url = URI("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=#{@restaurant.name}&inputtype=textquery&fields=place_id&key=#{key}")
+    # key = ENV['GOOGLE_MAPS_API_KEY']
+    id_url = URI("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=#{@restaurant.name}&inputtype=textquery&locationbias=ipbias&fields=place_id&key=AIzaSyBUm0Tlt9t8A5HxGpzrYqr48YXDk6T44v4")
     restaurant_serialized = URI.open(id_url).read
     restaurant_basics = JSON.parse(restaurant_serialized)
     place_id = restaurant_basics["candidates"][0]["place_id"]
 
-    details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cgeometry/location%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=#{key}")
+    details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cgeometry/location%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=AIzaSyBUm0Tlt9t8A5HxGpzrYqr48YXDk6T44v4")
     details_serialized = URI.open(details_url).read
     restaurant_details = JSON.parse(details_serialized)
     @restaurant.name = restaurant_details["result"]["name"]
