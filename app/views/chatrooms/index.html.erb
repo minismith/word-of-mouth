@@ -1,0 +1,21 @@
+<div class="container">
+
+<div class="my-3 text-center">
+  <h1>Your chats<h1>
+</div>
+
+  <div class="chat-wrapper">
+    <% @chatrooms.each do |chatroom| %>
+      <% if chatroom.friendship.user == current_user %>
+        <div class="mb-3 friend-chat">
+          <p><%= link_to User.find(chatroom.friendship.friend_id).first_name, chatroom_path(chatroom.friendship.id) %> <%= icon('fa-solid', 'comment') %></p>
+        </div>
+      <% else %>
+      <div class="mb-3 friend-chat">
+        <p><%= link_to User.find(chatroom.friendship.user_id).first_name, chatroom_path(chatroom.friendship.id) %> <%= icon('fa-solid', 'comment') %></p>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
