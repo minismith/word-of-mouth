@@ -4,14 +4,11 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  /* body{
-    background-color: #FBB7C0;
-  } */
 
-  body{
+
+.default-error-body{
   display: flex;
-  /* width: 100vw;
-  height: 100vh; */
+
   align-items: center;
   justify-content: center;
   margin: 40px;
@@ -20,8 +17,7 @@
   color: rgb(7, 7, 7);
   font-size: 30px;
   font-family: 'DM sans', monospace;
-  /* letter-spacing: -7px; */
-  /* margin: 0 100px 0 100px; */
+
 }
 
 div{
@@ -93,9 +89,9 @@ text-align: center;
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="default-error-body">
   <!-- This file lives in public/404.html -->
-  <div class="container">
+  <div>
     <div class="errornum">
       <h1>404</h1>
       <p class="errortext">uh oh! page you were looking for doesn't exist.</p>
