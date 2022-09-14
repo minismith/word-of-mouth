@@ -8,6 +8,8 @@
 require "open-uri"
 require "faker"
 
+Chatroom.delete_all
+Bookmark.delete_all
 Like.delete_all
 Review.delete_all
 Restaurant.delete_all
