@@ -27,11 +27,13 @@
 
       <div class="modal-body">
         <h3>Location</h3>
-        <%= form_tag  restaurants_path, method: :get do %>
-          <%=text_field_tag :query1,
-          params[:query1],
-          class: "form-control",
-          placeholder: "where would you like to go?"%>
+        <div id="location-form">
+          <%= form_tag  restaurants_path, method: :get do %>
+            <%=text_field_tag :query1,
+            params[:query1],
+            class: "form-control",
+            placeholder: "where would you like to go?"%>
+        </div>
 
           <br>
         <h3>Cuisine</h3>
