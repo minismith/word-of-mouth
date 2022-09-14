@@ -1,0 +1,5 @@
+meta_product_name: "Word of Mouth"
+meta_title: "Word of Mouth - Celebrate your shared tastes"
+meta_description: "Word of Mouth is the social network that lets you keep track of the restaurants you and your friends love."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@wordofmouthapp_"
