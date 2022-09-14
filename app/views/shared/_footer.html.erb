@@ -34,6 +34,17 @@
           <% end %>
       <% end %>
     </li>
+     <li>
+      <% if (params[:controller] == "chatrooms" && params[:action] == "index") %>
+          <%= link_to chatrooms_path, class: "active" do %>
+            <i class="fa-solid fa-comment"></i>
+          <% end %>
+        <% else %>
+          <%= link_to chatrooms_path do %>
+            <i class="fa-solid fa-comment"></i>
+          <% end %>
+      <% end %>
+    </li>
     <li>
     <% if (params[:controller] == "users" && params[:action] == "show") %>
         <% if user_signed_in? %>

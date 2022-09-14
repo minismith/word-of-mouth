@@ -1,0 +1,31 @@
+.friend-chat {
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+  height: 65px;
+  padding: 10px 10px;
+  text-align: center;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 26px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    i {
+      font-size: 26px;
+      margin-left: 20px;
+    }
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
