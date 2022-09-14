@@ -8,6 +8,7 @@
 require "open-uri"
 require "faker"
 
+Message.delete_all
 Chatroom.delete_all
 Bookmark.delete_all
 Like.delete_all
