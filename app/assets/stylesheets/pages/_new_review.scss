@@ -136,3 +136,15 @@
   background-color: #D0F0C0;
   border: 2px solid black;
 }
+
+.restaurant-options {
+  width: 100%;
+  padding-bottom: 10px;
+
+  select {
+    width: 100%;
+    height: 40px;
+    border: 2px solid black;
+    color: black;
+  }
+}
