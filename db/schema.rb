@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_162531) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_111440) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162531) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "friendship_id"
+    t.index ["friendship_id"], name: "index_chatrooms_on_friendship_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -134,7 +136,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162531) do
     t.string "emoji"
     t.text "content"
     t.string "title"
-    t.text "perfect_for"
+    t.string "perfect_for"
     t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

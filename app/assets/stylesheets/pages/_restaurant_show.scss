@@ -33,6 +33,7 @@
 
     .btn {
       background-color: #D0F0C0;
+      width: 180px;
       border: 2px solid black;
       font-weight: bold;
       height: 40px;
@@ -73,4 +74,20 @@
 
 .opening-modal-body {
   height: 350px;
+}
+
+.restaurant-details button {
+  background-color: white;
+  border: none;
+  font-size: 29px;
+  padding-top: 2px;
+  padding-left: 2px;
+}
+
+.wishlist-btn {
+  color: #FADCDC;
+}
+
+.wishlist-btn-pink {
+  color: #FF70B3;
 }

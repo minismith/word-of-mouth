@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @bookmarks = (Bookmark.where(user:current_user)).reverse
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
       @user = User.where(sql_query, query: "%#{params[:query]}%").first
@@ -7,7 +8,6 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-
 
     @reviews = Review.where(user: @user).order(created_at: :desc)
     @restaurants = Restaurant.where(reviews: @reviews)
