@@ -3,35 +3,38 @@
     <h1>How was it?</h1>
   </div>
   <div id="review_form" data-controller="autocomplete">
-  <%= simple_form_for [@review] do |f| %>
+    <%= simple_form_for [@review] do |f| %>
 
      <h2> <label class="form-label text required" for="review_restaurant_id">Where? <abbr title="required">*</abbr></label></h2>
      <div class="restaurant-options">
-        <%= select_tag(:restaurant_id, options_from_collection_for_select( @restaurants.sort_by {|r| r.name }, :id, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2 review-input-box", name: "review[restaurant_id]", id: "review_restaurant_id") %>
+        <%= select_tag(:restaurant_id, options_from_collection_for_select( @restaurants.sort_by {|r| r.name }, :id, :name ),  data: { autocomplete_target: "select2", action: "change->autocomplete#update" }, class: "select2", name: "review[restaurant_id]", id: "review_restaurant_id") %>
      </div>
 
-    <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
-            <i class="fa-solid fa-plus ms-2 btn link-to-new-restaurant"></i>
-          <% end %><p>
+      <p>Can't see it on the list? Add a new place: <%= link_to new_restaurant_path do %>
+              <i class="fa-solid fa-plus ms-2 btn link-to-new-restaurant"></i>
+            <% end %><p>
 
-    <h2><%= f.input :title, input_html: {class: "review-input-box"}, label: "The topline" %></h2>
-    <h2><%= f.input :emoji, as: :radio_buttons, label: "Pick an emoji", collection_wrapper_tag: 'div',
-        collection_wrapper_class: 'emoji-wrapper',
-        item_wrapper_class: 'emoji-item',
-        input_html: {class: 'emoji-selector'},
-        class: 'with-font',
-        collection: Review::EMOJIS %></h2>
-    <h2><%= f.input :content, input_html: {class: "review-input-box"}, label: "Give it to us..." %></h2>
+      <h2><%= f.input :title, input_html: {class: "review-input-box"}, label: "The topline" %></h2>
+      <h2><%= f.input :emoji, as: :radio_buttons, label: "Pick an emoji", collection_wrapper_tag: 'div',
+          collection_wrapper_class: 'emoji-wrapper',
+          item_wrapper_class: 'emoji-item',
+          input_html: {class: 'emoji-selector'},
+          class: 'with-font',
+          collection: Review::EMOJIS %></h2>
+      <h2><%= f.input :content, input_html: {class: "review-input-box"}, label: "Give it to us..." %></h2>
 
-    <h2><%= f.input :perfect_for, as: :check_boxes, label: "Perfect for...", input_html: { class: "perfect-for-selector" },
-                  item_wrapper_class: 'perfect-for-item', collection: Review::PERFECT_FOR %></h2>
+      <h2><%= f.input :perfect_for, as: :check_boxes, label: "Perfect for...", input_html: { class: "perfect-for-selector" },
+                    item_wrapper_class: 'perfect-for-item', collection: Review::PERFECT_FOR %></h2>
 
-    <h2><%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Pics or it didn't happen", selected: "selected" %></h2>
+      <h2><%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Pics or it didn't happen", selected: "selected" %></h2>
 
-    <div class="submit-review">  <%= f.button :submit, class: 'btn submit-review-btn', value: "Add review" %> </div>
-    </div>
+      <div class="submit-review">
+        <%= f.button :submit, class: 'btn submit-review-btn', value: "Add review" %>
+      </div>
+    <% end %>
+  </div>
 
-  <% end %>
+
 
   </div>
 
