@@ -1,12 +1,10 @@
 class Review < ApplicationRecord
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many_attached :photos
   belongs_to :user
   belongs_to :restaurant
-  has_many :comments, dependent: :destroy
   serialize :perfect_for, Array
-  has_many_attached :photos
-  has_many :likes, dependent: :destroy
-
-
 
   validates :title, presence: true
   validates :content, presence: true
