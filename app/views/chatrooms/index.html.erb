@@ -7,13 +7,19 @@
   <div class="chat-wrapper">
     <% @chatrooms.each do |chatroom| %>
       <% if chatroom.friendship.user == current_user %>
-        <div class="mb-3 friend-chat">
-          <p><%= link_to User.find(chatroom.friendship.friend_id).first_name, chatroom_path(chatroom.friendship.id) %> <%= icon('fa-solid', 'comment') %></p>
+        <div class="mb-3 friend-chat d-flex justify-content-between">
+          <div class="avatar-and-name d-flex">
+            <%= cl_image_tag chatroom.friendship.user.avatar.key, class: "avatar-bordered", alt: "avatar-bordered" %> <p><%= link_to User.find(chatroom.friendship.friend_id).first_name, chatroom_path(chatroom.friendship.id) %></p>
+          </div>
+          <%= icon('fa-solid', 'comment') %>
         </div>
       <% else %>
-      <div class="mb-3 friend-chat">
-        <p><%= link_to User.find(chatroom.friendship.user_id).first_name, chatroom_path(chatroom.friendship.id) %> <%= icon('fa-solid', 'comment') %></p>
-      </div>
+        <div class="mb-3 friend-chat d-flex justify-content-between">
+          <div class="avatar-and-name d-flex">
+            <%= cl_image_tag chatroom.friendship.user.avatar.key, class: "avatar-bordered", alt: "avatar-bordered" %> <p><%= link_to User.find(chatroom.friendship.user_id).first_name, chatroom_path(chatroom.friendship.id) %></p>
+          </div>
+          <%= icon('fa-solid', 'comment') %>
+        </div>
       <% end %>
     <% end %>
   </div>
