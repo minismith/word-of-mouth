@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
-    @bookmarks = (Bookmark.where(user:current_user)).reverse
+    # @bookmarks = (Bookmark.where(user:current_user)).reverse
+    user = User.find(params[:id])
+    @bookmarks = (Bookmark.where(user: user)).reverse
+
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
       @user = User.where(sql_query, query: "%#{params[:query]}%").first

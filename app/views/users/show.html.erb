@@ -108,7 +108,12 @@
       <label for="wishlist"><h3>Wishlist</h3></label>
       <div class="tab">
           <div class="user-restaurant">
+          <% if current_user.friend_with?(@user) %>
             <%= render "shared/restaurant_wishlist"%>
+           <% end %>
+          <% if @user == current_user %>
+             <%= render "shared/restaurant_wishlist"%>
+          <% end %>
           </div>
       </div>
 
