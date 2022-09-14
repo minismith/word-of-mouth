@@ -110,9 +110,9 @@
           <div class="user-restaurant">
           <% if current_user.friend_with?(@user) %>
             <%= render "shared/restaurant_wishlist"%>
-          <% end %>
+           <% end %>
           <% if @user == current_user %>
-            <%= render "shared/restaurant_wishlist"%>
+             <%= render "shared/restaurant_wishlist"%>
           <% end %>
           </div>
       </div>
