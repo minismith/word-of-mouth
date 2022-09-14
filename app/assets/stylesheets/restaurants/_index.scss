@@ -1,1 +1,14 @@
 @import "home";
+.modal-title h2 {
+  text-align: center;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+#location-form {
+  border: solid 2px black;
+  border-radius: 2px;
+  background-color: white;
+}
