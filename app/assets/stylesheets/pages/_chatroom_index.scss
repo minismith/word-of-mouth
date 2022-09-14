@@ -3,7 +3,7 @@
   background-color: white;
   border-radius: 10px;
   width: 60%;
-  margin: 0 auto;
+  margin: auto auto;
   height: 65px;
   padding: 10px 10px;
   text-align: center;
@@ -15,12 +15,12 @@
     }
 
     p {
-      margin: 0;
+      margin-left: 10px;
     }
 
     i {
-      font-size: 26px;
-      margin-left: 20px;
+      font-size: 30px;
+      margin-top: 5px;
     }
 }
 
