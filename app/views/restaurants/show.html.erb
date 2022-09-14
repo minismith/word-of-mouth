@@ -14,9 +14,9 @@
         <div class="main-details">
           <p><%= @restaurant.cuisine %> |
             <% if @restaurant.price == "£" %>
-              <strong><%= @restaurant.price %></strong>££
+              <strong><%= @restaurant.price%></strong><span style="color:#aba9a9">££</span>
             <% elsif @restaurant.price == "££" %>
-              <strong><%= @restaurant.price %></strong>£
+              <strong><%= @restaurant.price %></strong><span style="color:#aba9a9">£</span>
             <% else %>
               <strong><%= @restaurant.price %></strong>
             <% end %>
