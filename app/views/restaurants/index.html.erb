@@ -19,58 +19,79 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Find a Restaurant</h5>
+        <h2 class="modal-title" id="exampleModalLongTitle">Find a Restaurant</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
       <div class="modal-body">
-      <h3>Location</h3>
-       <%= form_tag  restaurants_path, method: :get do %>
-        <%=text_field_tag :query1,
-        params[:query1],
-        class: "form-control",
-        placeholder: "where would you like to go?"%>
+        <h3>Location</h3>
+        <%= form_tag  restaurants_path, method: :get do %>
+          <%=text_field_tag :query1,
+          params[:query1],
+          class: "form-control",
+          placeholder: "where would you like to go?"%>
 
-        <br>
-      <h3>Cuisine</h3>
-        <%# <%= select_tag :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
-        <%= select_tag 'cuisine', options_for_select(['American','Italian', 'Indian', 'Carribean', 'Mexican', 'Middle eastern', 'Turkish', 'Japanese', 'Spanish','Greek'])%>
-         <br>
-         <br>
-        <h3>Price</h3>
+          <br>
+        <h3>Cuisine</h3>
+          <%# <%= select_tag :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
+          <%= select_tag 'cuisine', options_for_select(['American', 'Italian', 'English', 'Indian', 'Chinese', 'French', 'Thai', 'Korean', 'Vietnamese', 'Ethiopian', 'Argentinian', 'North African', 'Bangladeshi', 'Sri Lankan', 'Malaysian', 'Caribbean', 'Mexican', 'Middle Eastern', 'Turkish', 'Japanese', 'Spanish','Greek'])%>
+          <br>
+          <br>
+          <h3>Price</h3>
 
-         <%= check_box_tag :price %>
-         <%= label_tag :price, "£" %>
-         <%= check_box_tag :price%>
-         <%= label_tag :price, "££" %>
-         <%= check_box_tag :price%>
-         <%= label_tag :price, "£££" %>
-        <br>
-        <br>
-       <h3>Perfect For ...</h3>
+          <%= check_box_tag :price %>
+          <%= label_tag :price, "£" %>
+          <%= check_box_tag :price%>
+          <%= label_tag :price, "££" %>
+          <%= check_box_tag :price%>
+          <%= label_tag :price, "£££" %>
+          <br>
+          <br>
+        <h3>Perfect For ...</h3>
 
-       <%= radio_button_tag :perfect_for, "girls night" %>
-       <%= label_tag :perfect_for, "girls night" %>
-       <%= radio_button_tag :perfect_for,"lads night" %>
-       <%= label_tag :perfect_for, "lads night" %>
-       <%= radio_button_tag :perfect_for,"date night" %>
-       <%= label_tag :perfect_for, "date night" %>
-       <%= radio_button_tag :perfect_for,"fancy dinner" %>
-       <%= label_tag :perfect_for, "fancy dinner" %>
-       <%= radio_button_tag :perfect_for,"keep it casual" %>
-       <%= label_tag :perfect_for, "keep it casual" %>
-       <%= radio_button_tag :perfect_for,"parents visit" %>
-       <%= label_tag :perfect_for, "Parents visit" %>
+       <!-- <%= radio_button_tag :perfect_for, "Friend catch up" %>
+        <%= label_tag :perfect_for, "Friend catch up" %>
+        <%= radio_button_tag :perfect_for,"Boozing" %>
+        <%= label_tag :perfect_for, "Boozing" %>
+        <%= radio_button_tag :perfect_for,"Date night" %>
+        <%= label_tag :perfect_for, "Date night" %>
+        <%= radio_button_tag :perfect_for,"Cheap eats" %>
+        <%= label_tag :perfect_for, "Cheap eats" %>
+        <%= radio_button_tag :perfect_for,"Pay day" %>
+        <%= label_tag :perfect_for, "Pay day" %>
+        <%= radio_button_tag :perfect_for,"Parents in town" %>
+        <%= label_tag :perfect_for, "Parents in town" %>
+        <%= radio_button_tag :perfect_for,"Birthday dinner" %>
+        <%= label_tag :perfect_for, "Birthday dinner" %>
+        <%= radio_button_tag :perfect_for,"Group hang" %>
+        <%= label_tag :perfect_for, "Group hang" %>
+        <%= radio_button_tag :perfect_for,"Wasting money" %>
+        <%= label_tag :perfect_for, "Wasting money" %>
+        <%= radio_button_tag :perfect_for,"Second date" %>
+        <%= label_tag :perfect_for, "Second date" %> -->
 
+      <fieldset class="mb-3 check_boxes optional review_perfect_for">
+        <legend class="col-form-label pt-0">Perfect for...</legend>
+        <input type="hidden" name="review[perfect_for][]" value="" autocomplete="off">
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Date night" name="review[perfect_for][]" id="review_perfect_for_date_night"><label class="form-check-label collection_check_boxes" for="review_perfect_for_date_night">Date night</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Parents in town" name="review[perfect_for][]" id="review_perfect_for_parents_in_town"><label class="form-check-label collection_check_boxes" for="review_perfect_for_parents_in_town">Parents in town</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Boozing" name="review[perfect_for][]" id="review_perfect_for_boozing"><label class="form-check-label collection_check_boxes" for="review_perfect_for_boozing">Boozing</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Friend catch-up" name="review[perfect_for][]" id="review_perfect_for_friend_catch-up"><label class="form-check-label collection_check_boxes" for="review_perfect_for_friend_catch-up">Friend catch-up</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Cheap eats" name="review[perfect_for][]" id="review_perfect_for_cheap_eats"><label class="form-check-label collection_check_boxes" for="review_perfect_for_cheap_eats">Cheap eats</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Pay day" name="review[perfect_for][]" id="review_perfect_for_pay_day"><label class="form-check-label collection_check_boxes" for="review_perfect_for_pay_day">Pay day</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Birthday dinner" name="review[perfect_for][]" id="review_perfect_for_birthday_dinner"><label class="form-check-label collection_check_boxes" for="review_perfect_for_birthday_dinner">Birthday dinner</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Group hang" name="review[perfect_for][]" id="review_perfect_for_group_hang"><label class="form-check-label collection_check_boxes" for="review_perfect_for_group_hang">Group hang</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Wasting money" name="review[perfect_for][]" id="review_perfect_for_wasting_money"><label class="form-check-label collection_check_boxes" for="review_perfect_for_wasting_money">Wasting money</label></div>
+        <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Second date" name="review[perfect_for][]" id="review_perfect_for_second_date"><label class="form-check-label collection_check_boxes" for="review_perfect_for_second_date">Second date</label></div>
+      </fieldset>
 
-      </div>
+    </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%# <button type="button" class="btn btn-primary">Search</button> %>
-         <%= submit_tag ("Search"), class:"btn btn-primary" %>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+         <%= submit_tag ("Search"), class:"btn submit-review-btn" %>
          <% end %>
       </div>
     </div>
