@@ -93,6 +93,12 @@
             <% end %>
           <% end %>
 
+          <% if @user == current_user %>
+            <% @reviews.each do |review| %>
+                <p class="review-intro profile-review"><strong><%= @user.first_name %></strong> left a review for <strong><%=review.restaurant.name%></strong>... </p>
+                <%= render "shared/review_card", review: review %>
+            <% end %>
+          <% end %>
 
 
       </div>
