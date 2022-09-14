@@ -1,14 +1,36 @@
 @import "home";
 .modal-title h2 {
-  text-align: center;
+  text-align: left;
 }
 
 .modal-body {
-  text-align: center;
+
 }
 
-#location-form {
-  border: solid 2px black;
-  border-radius: 2px;
-  background-color: white;
+.modal {
+  width: 80%;
+  margin: 30% 10%;
+  height: auto;
+}
+
+.cuisine-pick {
+  height: 40px;
+}
+
+.price-selector {
+  font-size: 25px;
+  margin: 0, 30px;
+}
+
+.price-selector:checked + label {
+  font-size: 40px;
+}
+
+.radio-prices {
+  display: flex;
+
+}
+
+.radio-btn {
+  padding-right: 15px;
 }

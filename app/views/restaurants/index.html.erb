@@ -26,32 +26,39 @@
       </div>
 
       <div class="modal-body">
-        <h3>Location</h3>
+        <h2>Location</h2>
         <div id="location-form">
           <%= form_tag  restaurants_path, method: :get do %>
             <%=text_field_tag :query1,
             params[:query1],
-            class: "form-control",
+            class: "form-control review-input-box",
             placeholder: "where would you like to go?"%>
         </div>
 
           <br>
-        <h3>Cuisine</h3>
+        <h2>Cuisine</h2>
           <%# <%= select_tag :cuisine, collection: Restaurant::CUISINE, class: "form-control"%>
-          <%= select_tag 'cuisine', options_for_select(['American', 'Italian', 'English', 'Indian', 'Chinese', 'French', 'Thai', 'Korean', 'Vietnamese', 'Ethiopian', 'Argentinian', 'North African', 'Bangladeshi', 'Sri Lankan', 'Malaysian', 'Caribbean', 'Mexican', 'Middle Eastern', 'Turkish', 'Japanese', 'Spanish','Greek'])%>
+          <%= select_tag 'cuisine', options_for_select(['American', 'Italian', 'English', 'Indian', 'Chinese', 'French', 'Thai', 'Korean', 'Vietnamese', 'Ethiopian', 'Argentinian', 'North African', 'Bangladeshi', 'Sri Lankan', 'Malaysian', 'Caribbean', 'Mexican', 'Middle Eastern', 'Turkish', 'Japanese', 'Spanish','Greek']), class: "review-input-box cuisine-pick" %>
           <br>
           <br>
-          <h3>Price</h3>
-
-          <%= check_box_tag :price %>
-          <%= label_tag :price, "£" %>
-          <%= check_box_tag :price%>
-          <%= label_tag :price, "££" %>
-          <%= check_box_tag :price%>
-          <%= label_tag :price, "£££" %>
+          <h2>Price</h2>
+          <div class="radio-prices">
+            <div class="radio-btn">
+              <%= radio_button_tag :price, "£", class: 'emoji-selector price-selector', id: "£" %>
+              <%= label_tag :price, "£", class: "price-selector", for: "£" %>
+            </div>
+            <div class="radio-btn">
+              <%= radio_button_tag :price, "££", class: 'emoji-selector price-selector', id: "££"%>
+              <%= label_tag :price, "££", class: "price-selector", for: "££" %>
+            </div>
+            <div class="radio-btn">
+              <%= radio_button_tag :price, "£££", class: 'emoji-selector price-selector', id: "£££"%>
+              <%= label_tag :price, "£££", class: "price-selector", for: "£££" %>
+            </div>
+          </div>
           <br>
           <br>
-        <h3>Perfect For ...</h3>
+        <h2>Perfect For ...</h2>
 
        <!-- <%= radio_button_tag :perfect_for, "Friend catch up" %>
         <%= label_tag :perfect_for, "Friend catch up" %>
@@ -75,7 +82,7 @@
         <%= label_tag :perfect_for, "Second date" %> -->
 
       <fieldset class="mb-3 check_boxes optional review_perfect_for">
-        <legend class="col-form-label pt-0">Perfect for...</legend>
+
         <input type="hidden" name="review[perfect_for][]" value="" autocomplete="off">
         <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Date night" name="review[perfect_for][]" id="review_perfect_for_date_night"><label class="form-check-label collection_check_boxes" for="review_perfect_for_date_night">Date night</label></div>
         <div class="perfect-for-item"><input class="form-check-input check_boxes optional perfect-for-selector" type="checkbox" value="Parents in town" name="review[perfect_for][]" id="review_perfect_for_parents_in_town"><label class="form-check-label collection_check_boxes" for="review_perfect_for_parents_in_town">Parents in town</label></div>
