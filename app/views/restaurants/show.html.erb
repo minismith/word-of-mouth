@@ -41,13 +41,19 @@
   </div>
 
   <div class="container restaurant-reviews">
-
- <% @reviews.each do |review| %>
-    <div class="show-review">
-      <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review... </p>
-      <%= render "shared/review_card", review: review %>
-    </div>
-  <% end %>
+    <% if @reviews.count == 0 %>
+      <div class="no-reviews">
+        <p><strong><%= "None of your friends" %></strong></p>
+        <p><strong><%= "have been here yet..." %></strong></p>
+      </div>
+    <% else %>
+      <% @reviews.each do |review| %>
+          <div class="show-review">
+            <p class="review-intro"><strong><%= review.user.first_name %></strong> left a review... </p>
+            <%= render "shared/review_card", review: review %>
+          </div>
+      <% end %>
+    <% end %>
 
   </div>
 
