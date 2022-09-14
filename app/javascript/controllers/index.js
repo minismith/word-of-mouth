@@ -10,6 +10,9 @@ application.register("autocomplete", AutocompleteController)
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
+import GeolocationController from "./geolocation_controller"
+application.register("geolocation", GeolocationController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
