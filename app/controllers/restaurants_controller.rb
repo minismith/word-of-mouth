@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reviews = Review.where(restaurant_id: params[:id])
+    @reviews = Review.where(restaurant_id: params[:id]).order(created_at: :desc)
     @markers = [{
       lat: @restaurant.latitude,
       lng: @restaurant.longitude,
