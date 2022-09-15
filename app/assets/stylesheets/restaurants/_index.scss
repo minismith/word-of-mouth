@@ -1,14 +1,56 @@
 @import "home";
 .modal-title h2 {
-  text-align: center;
+  text-align: left;
 }
 
 .modal-body {
-  text-align: center;
+
 }
 
-#location-form {
-  border: solid 2px black;
-  border-radius: 2px;
-  background-color: white;
+.modal {
+  width: 80%;
+  margin: 30% 10%;
+  height: auto;
+}
+
+.cuisine-pick {
+  height: 40px;
+}
+
+
+.radio-prices {
+  display: flex;
+
+}
+
+.radio-btn {
+  padding-right: 15px;
+  margin-right: auto;
+
+}
+
+.perfect-for-item label {
+ font-size: 12px;
+
+}
+
+.radio-btn input[type="radio"] {
+  visibility: hidden;
+}
+
+.radio-btn input[type="radio"] + label {
+  font-size: 25px;
+  font-family: 'DM Sans', sans-serif;
+
+}
+
+.radio-btn input[type="radio"]:checked + label {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'DM Sans', sans-serif;
+  color: #FF70B3;
+}
+
+.search-heading {
+  margin-top: 60px;
 }
