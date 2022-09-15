@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :restaurants, only: %i[index show new create] do
     resources :bookmarks, only: %i[new create]
   end
-  resources :restaurants, only: %i[index show new create]
+
+  post "/geolocate", to: "restaurants#geolocate", as: :geolocate
 
   resources :reviews do
     resources :likes, only: %i[create]

@@ -59,13 +59,14 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    @lat = session[:lat]
+    @lng = session[:lng]
     @restaurant = Restaurant.new(restaurant_params)
     key = ENV['GOOGLE_MAPS_API_KEY']
-    id_url = URI("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=#{@restaurant.name}&inputtype=textquery&locationbias=ipbias&fields=place_id&key=#{key}")
+    id_url = URI("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=#{@restaurant.name}&inputtype=textquery&locationbias=point:#{@lat}%2C#{@lng}&fields=place_id&key=#{key}")
     restaurant_serialized = URI.open(id_url).read
     restaurant_basics = JSON.parse(restaurant_serialized)
     place_id = restaurant_basics["candidates"][0]["place_id"]
-
     details_url = URI("https://maps.googleapis.com/maps/api/place/details/json?place_id=#{place_id}&fields=name%2Copening_hours/weekday_text%2Cgeometry/location%2Cprice_level%2Cgeometry/location%2Cformatted_address%2Cwebsite&key=#{key}")
     details_serialized = URI.open(details_url).read
     restaurant_details = JSON.parse(details_serialized)
@@ -91,13 +92,17 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def geolocate
+    lat = params[:coords][:lat]
+    lng = params[:coords][:lng]
+    session[:lat] = lat
+    session[:lng] = lng
+  end
+
   private
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :cuisine, :price)
-  end
-
-  def find_user
-
+    # params.require(:coords).permit(:lng, :lat)
   end
 end
