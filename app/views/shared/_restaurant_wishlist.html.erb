@@ -20,5 +20,8 @@
         </div>
       </div>
       <% end %>
+      <div id="wishlist-remove"><p><%= link_to "Remove #{restaurant.name} from Wishlist?", bookmark_path(bookmark),
+              data: {turbo_method: :Delete} %></p></div>
     <% end %>
+
 </div>
