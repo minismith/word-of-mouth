@@ -23,10 +23,10 @@
   </div>
 
     <div class="review-content">
-      <% if review.content.length < 85 %>
+      <% if review.content.length < 70 %>
          <p class="text-left-card"><%= review.content %></p>
       <% else %>
-        <p class="text-left-card"><%= review.content[0, 85]%>...</p>
+        <p class="text-left-card"><%= review.content[0, 70]%>...</p>
       <% end %>
     </div>
     <%= render "shared/review_modal", review: review %>
