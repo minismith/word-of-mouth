@@ -1,5 +1,5 @@
 <div class="restaurant-main-card">
-    <% @restaurants.each do |restaurant|%>
+    <% @restaurants.shuffle.each do |restaurant|%>
       <%= link_to restaurant_path(restaurant) do %>
       <div class="restaurant-card">
         <div class="restaurant-card-image">

@@ -90,6 +90,7 @@ class RestaurantsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    session.clear
   end
 
   def geolocate

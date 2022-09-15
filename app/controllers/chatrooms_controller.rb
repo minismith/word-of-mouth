@@ -5,7 +5,7 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    @user_friendships = Friendship.where(friend_id: current_user).or(Friendship.where(user_id: current_user))
+    @user_friendships = Friendship.where(friend_id: current_user).or(Friendship.where(user_id: current_user)).where(confirmed: true)
     @chatrooms = Chatroom.where(friendship_id: @user_friendships)
   end
 end

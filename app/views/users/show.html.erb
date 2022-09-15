@@ -63,9 +63,7 @@
         <h3 class="mt-4"> Your friend requests: </h3>
 
           <% @user.pending_friendships.each do |invitation| %>
-
             <%= render "shared/friend_request_card", friend: User.find(invitation.user_id), invitation: invitation %>
-
           <% end %>
 
       <% end %>
