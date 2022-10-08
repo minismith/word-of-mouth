@@ -3,7 +3,6 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="geolocation"
 export default class extends Controller {
   connect() {
-    console.log("not sure")
     window.navigator.geolocation.getCurrentPosition((position) => {
       console.log(position);
       const lat = position.coords.latitude;

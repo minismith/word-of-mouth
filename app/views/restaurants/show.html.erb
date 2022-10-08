@@ -12,7 +12,7 @@
     <div class="restaurant-details">
       <div class="d-flex justify-content-between">
         <div class="main-details">
-          <p><%= @restaurant.cuisine %> |
+          <p><%= @restaurant.cuisine %>
             <% if @restaurant.price == "£" %>
               <strong><%= @restaurant.price%></strong><span style="color:#aba9a9">££</span>
             <% elsif @restaurant.price == "££" %>

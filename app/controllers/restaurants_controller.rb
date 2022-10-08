@@ -87,6 +87,8 @@ class RestaurantsController < ApplicationController
 
     if @restaurant.save
       redirect_to new_review_path
+      session.delete(:lat)
+      session.delete(:lng)
     else
       render :new, status: :unprocessable_entity
     end
